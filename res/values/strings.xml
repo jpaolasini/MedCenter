@@ -11,5 +11,10 @@
     <string name="cannot">Cannot</string>
     <string name="album_name">CameraSample</string>
     <string name="title_activity_graphing">GraphingActivity</string>
+    <string-array name="doctornurse">
+        <item>Doctor</item>
+        <item>Nurse</item>
+    </string-array>
+    
 
 </resources>

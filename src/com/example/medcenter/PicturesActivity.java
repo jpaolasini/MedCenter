@@ -7,17 +7,16 @@ import android.view.View;
 
 public class PicturesActivity extends Activity {
 
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_pictures);
-		Intent intent = getIntent();
-		//String message = intent.getStringExtra(LoginActivity.EXTRA_MESSAGE);
-		//EditText editText = (EditText) findViewById(R.id.textView1);
-	}
-	
-	public void goToUserInfo(View view)
-	{
-		Intent intent = new Intent(getApplicationContext(), UserInfoActivity.class);
-		startActivity(intent);
-	}
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_pictures);
+    Intent intent = getIntent();
+    // String message = intent.getStringExtra(LoginActivity.EXTRA_MESSAGE);
+    // EditText editText = (EditText) findViewById(R.id.textView1);
+  }
+
+  public void goToUserInfo(View view) {
+    Intent intent = new Intent(getApplicationContext(), UserInfoActivity.class);
+    startActivity(intent);
+  }
 }
