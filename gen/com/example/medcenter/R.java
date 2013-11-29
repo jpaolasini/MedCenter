@@ -45,6 +45,8 @@ public final class R {
         public static final int editText4=0x7f090007;
         public static final int editText5=0x7f090009;
         public static final int editText6=0x7f09000b;
+        public static final int editText7=0x7f080018;
+        public static final int editText8=0x7f08001a;
         public static final int errorMessage=0x7f09000f;
         public static final int image=0x7f090015;
         public static final int imageView1=0x7f090018;
