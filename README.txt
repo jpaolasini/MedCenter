@@ -92,5 +92,4 @@ Nurse Specific Functions:
 Add patient information
 View Medical Chart
 Patient Finder
-	
-	test
+
