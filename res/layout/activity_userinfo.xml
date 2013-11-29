@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/errorMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Patient Name"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Address"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Other basics"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:visibility = "visible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="224dp"
+        android:layout_height="wrap_content"
+        android:onClick = "goToPictures"
+        android:text="View Pictures" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="229dp"
+        android:layout_height="wrap_content"
+        android:onClick = "goToMedChart"
+        android:text="View Medical Chart" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="228dp"
+        android:layout_height="wrap_content"
+        android:onClick = "goToSchedule"
+        android:text="View Schedule" />
+
+</LinearLayout>
