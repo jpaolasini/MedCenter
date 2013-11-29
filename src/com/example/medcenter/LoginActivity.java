@@ -30,6 +30,11 @@ public class LoginActivity extends Activity {
 		return true;
 	}
 	
+	@Override
+	public void onBackPressed(){
+		
+	}
+	
 	/*
 	 * Logs in a user.
 	 * It does this by grabbing the user name and password
