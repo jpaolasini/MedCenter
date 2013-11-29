@@ -51,16 +51,18 @@ public final class R {
     }
     public static final class layout {
         public static final int activity_adddoctor=0x7f030000;
-        public static final int activity_home=0x7f030001;
-        public static final int activity_login=0x7f030002;
-        public static final int activity_medchart=0x7f030003;
-        public static final int activity_pictures=0x7f030004;
-        public static final int activity_register=0x7f030005;
-        public static final int activity_schedule=0x7f030006;
-        public static final int activity_userinfo=0x7f030007;
+        public static final int activity_graphing=0x7f030001;
+        public static final int activity_home=0x7f030002;
+        public static final int activity_login=0x7f030003;
+        public static final int activity_medchart=0x7f030004;
+        public static final int activity_pictures=0x7f030005;
+        public static final int activity_register=0x7f030006;
+        public static final int activity_schedule=0x7f030007;
+        public static final int activity_userinfo=0x7f030008;
     }
     public static final class menu {
-        public static final int login=0x7f070000;
+        public static final int graphing=0x7f070000;
+        public static final int login=0x7f070001;
     }
     public static final class string {
         public static final int action_settings=0x7f050001;
@@ -72,6 +74,7 @@ public final class R {
         public static final int cannot=0x7f050007;
         public static final int hello=0x7f050003;
         public static final int hello_world=0x7f050002;
+        public static final int title_activity_graphing=0x7f050009;
     }
     public static final class style {
         /** 
