@@ -1,28 +1,13 @@
 package com.example.medcenter;
 
 import java.io.File;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Spinner;
-
-import android.app.AlertDialog;
-import android.app.AlertDialog.Builder;
-import android.app.Dialog;
-import android.content.DialogInterface;
-import android.widget.Toast;
-
-import android.app.AlertDialog;
-import android.app.AlertDialog.Builder;
-import android.app.Dialog;
-import android.content.DialogInterface;
-import android.widget.Toast;
-
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
 import android.app.Dialog;
@@ -31,9 +16,8 @@ import android.widget.Toast;
 
 public class AddDoctorActivity extends Activity {
   public final static String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
-  private static final int DIALOG_ALERT = 10;
 
-	  private static final int DIALOG_ALERT = 10;
+  private static final int DIALOG_ALERT = 10;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -107,7 +91,7 @@ public class AddDoctorActivity extends Activity {
               password.getText().toString(), firstName.getText().toString(),
               lastName.getText().toString(), department.getText().toString(),
               number.getText().toString(), email.getText().toString());
-			  // Encrypt data and write it to text file in the app directory.
+          // Encrypt data and write it to text file in the app directory.
           FileHandler.WriteFile(directoryPath + "/medCenter/", fileName,
               mergedData);
 
@@ -133,7 +117,6 @@ public class AddDoctorActivity extends Activity {
       }
     }
   }
-
 
   @Override
   protected Dialog onCreateDialog(int id) {
@@ -162,15 +145,11 @@ public class AddDoctorActivity extends Activity {
   private final class OkOnClickListener implements
       DialogInterface.OnClickListener {
     public void onClick(DialogInterface dialog, int which) {
-    	Toast.makeText(getApplicationContext(), "You have been logged out",
-  	          Toast.LENGTH_LONG).show();
-        Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
-        startActivity(intent);
+      Toast.makeText(getApplicationContext(), "You have been logged out",
+          Toast.LENGTH_LONG).show();
+      Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+      startActivity(intent);
     }
   }
-  
- 
-
-
 
 }
