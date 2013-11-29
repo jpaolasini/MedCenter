@@ -91,4 +91,12 @@ public class LoginActivity extends Activity {
 			 t.setText("Failed");
 		 }
 	}
+	
+	
+	public void pedometer(View view)
+	{
+	 Intent intent = new Intent(getApplicationContext(), PedometerActivity.class);
+	 startActivity(intent);
+	  
+	}
 }
