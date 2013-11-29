@@ -30,6 +30,12 @@ public class UserInfoActivity extends Activity {
 		startActivity(intent);
 	}
 	
+	public void goToGraphing(View view)
+	{
+		Intent intent = new Intent(getApplicationContext(), GraphingActivity.class);
+		startActivity(intent);
+	}
+	
 	//Go to the schedule activity
 	public void goToSchedule(View view)
 	{

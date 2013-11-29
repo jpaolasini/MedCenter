@@ -2,6 +2,7 @@ package com.example.medcenter;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.view.Menu;
 
 public class GraphingActivity extends Activity {
@@ -10,6 +11,7 @@ public class GraphingActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_graphing);
+		Intent intent = getIntent();
 	}
 
 	@Override

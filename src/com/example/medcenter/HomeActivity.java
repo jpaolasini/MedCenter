@@ -27,7 +27,7 @@ public class HomeActivity extends Activity{
 		Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
 		startActivity(intent);
 	}
-	
+
 	/*
 	 * Transfers to the user info page.
 	 */
