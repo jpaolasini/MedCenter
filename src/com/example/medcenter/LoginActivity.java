@@ -7,7 +7,10 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+
 public class LoginActivity extends Activity {
+	
+	private static final int DIALOG_ALERT = 10;
 	public final static String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
 
 	@Override
@@ -32,13 +35,17 @@ public class LoginActivity extends Activity {
 	
 	@Override
 	public void onBackPressed(){
-		
+		Intent intent = new Intent(Intent.ACTION_MAIN);
+		intent.addCategory(Intent.CATEGORY_HOME);
+		intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+		startActivity(intent);
 	}
+	
 	
 	/*
 	 * Logs in a user.
 	 * It does this by grabbing the user name and password
-	 * off the activity page and checks them against predifined values.
+	 * off the activity page and checks them against predefined values.
 	 */
 	public void logInUser(View view)
 	{
