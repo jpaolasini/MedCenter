@@ -43,13 +43,5 @@ public class AddDoctorActivity extends Activity {
     decrypted.setText(FileHandler.ReadFile(directoryPath + "/medCenter/",
         editText.getText().toString() + ".txt"));
 
-    // byte[] array = new byte[myStr.length()];
-    // array = myStr.getBytes();
-    // byte[] arrayEnc = AESencrp.encrypt(array);
-    // byte[] arrayDec = AESencrp.decrypt(arrayEnc);
-    // String encStr = new String(arrayEnc);
-    // String strS = new String(arrayDec);
-    // encrypted.setText(encStr);
-    // decrypted.setText(strS);
   }
 }

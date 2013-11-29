@@ -78,7 +78,7 @@ public class FileHandler extends AESencrp {
     return null;
   }
 
-  /*
+  /**
    * Create a new file on the internal storage so that we can write to it.
    */
   public static File createDirectory(String directoryName, String directoryPath) {

@@ -14,7 +14,7 @@ public class LoginActivity extends Activity {
   public final static String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
 
   @Override
-  /*
+  /**
    * runs when this page is accessed in order to display the according Activity.
    */
   protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +42,7 @@ public class LoginActivity extends Activity {
     startActivity(intent);
   }
 
-  /*
+  /**
    * Logs in a user. It does this by grabbing the user name and password off the
    * activity page and checks them against predefined values.
    */
@@ -64,7 +64,7 @@ public class LoginActivity extends Activity {
     }
   }
 
-  /*
+  /**
    * Transfers a user to the registration page.
    */
   public void goToRegister(View view) {
@@ -72,7 +72,7 @@ public class LoginActivity extends Activity {
     startActivity(intent);
   }
 
-  /*
+  /**
    * logs in an administrator. Can be removed and have this feature added to
    * regular login once we have access control for all users.
    */

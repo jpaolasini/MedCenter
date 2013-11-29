@@ -8,7 +8,7 @@ import android.view.View;
 public class HomeActivity extends Activity {
 
   @Override
-  /*
+  /**
    * runs when this page is accessed in order to display the according Activity.
    */
   protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +19,7 @@ public class HomeActivity extends Activity {
     // EditText editText = (EditText) findViewById(R.id.textView1);
   }
 
-  /*
+  /**
    * Logs out a user.
    * 
    * @param View view - a view.
@@ -29,7 +29,7 @@ public class HomeActivity extends Activity {
     startActivity(intent);
   }
 
-  /*
+  /**
    * Transfers to the user info page.
    */
   public void viewUserInfo(View view) {
