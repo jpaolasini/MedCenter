@@ -86,15 +86,15 @@ public class DoctorNurseInformation {
     String number1 = new String(AESencrp.encrypt(number.getBytes()));
     String email1 = new String(AESencrp.encrypt(email.getBytes()));
 
-    String parser = "^*^*^";
-    String mergedData = type1 + username1 + parser + password1 + parser
-        + firstName1 + parser + lastName1 + parser + department1 + parser
-        + number1 + parser + email1;
+    String parser = ",";
+    String mergedData = username + parser + password + parser
+        + firstName + parser + lastName + parser + type + parser + department + parser
+        + number + parser + email;
     return mergedData;
   }
 
   public static String parseInfo(String userInfo) {
-    String delims = "^*^*^";
+    String delims = ",";
     String[] tokens = userInfo.split(delims);
 
     return tokens[0];

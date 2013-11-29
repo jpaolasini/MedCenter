@@ -94,14 +94,10 @@ public class AddDoctorActivity extends Activity {
           // Encrypt data and write it to text file in the app directory.
           FileHandler.WriteFile(directoryPath + "/medCenter/", fileName,
               mergedData);
-
-          // String decrypted = FileHandler.ReadFile(directoryPath +
-          // "/medCenter/", fileName);
-          // String firstValue = UserInformation.parseInfo(decrypted);
-          // String values = new
-          // String(AESencrp.decrypt(firstValue.getBytes()));
-          // read data from an encypted file and decrypt the data.
-          // userName.setText(values);
+          
+          
+         String decrypted =  FileHandler.ReadFile(directoryPath + "/medCenter/", fileName);
+         userName.setText(decrypted);
 
           Intent intent = new Intent(getApplicationContext(),
               LoginActivity.class);
