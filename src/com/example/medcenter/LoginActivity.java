@@ -38,7 +38,7 @@ public class LoginActivity extends Activity {
     getMenuInflater().inflate(R.menu.login, menu);
     return true;
   }
-
+/*
   @Override
   public void onBackPressed() {
     Intent intent = new Intent(Intent.ACTION_MAIN);
@@ -46,7 +46,7 @@ public class LoginActivity extends Activity {
     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
     startActivity(intent);
     
-  }
+  }*/
 
   /**
    * Logs in a user. It does this by grabbing the user name and password off the
@@ -65,8 +65,15 @@ public class LoginActivity extends Activity {
       Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
       intent.putExtra(EXTRA_MESSAGE, userName);
       startActivity(intent);
-    }else if(!userName.equalsIgnoreCase("") && !password.equalsIgnoreCase(""))
-    {
+    }
+    else if((userName.equals("A")) && password.equals("A"))
+    {//This is an admin login in order to demonstrate adding doctors/nurses.
+    	Intent intent = new Intent(getApplicationContext(),
+			      AddDoctorActivity.class);
+			      startActivity(intent);
+    }
+    else if(!userName.equalsIgnoreCase("") && !password.equalsIgnoreCase(""))
+    {//This is a test situation to be removed before demo. 
     	// Get the directory path to the download folder and create an app
         // folder there.
     	String fileName = userName + ".txt";
@@ -89,9 +96,32 @@ public class LoginActivity extends Activity {
         	
         	if(password.equals(userInfo[2]))
         	{
-        		Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
-        	    intent.putExtra(EXTRA_MESSAGE, userName);
-        	    startActivity(intent);
+        		UserInformation.userType = userInfo[4];
+        		if(UserInformation.userType.equals("patient"))
+        		{
+        			Intent intent = new Intent(getApplicationContext(), 
+        					HomeActivity.class);
+            	    intent.putExtra(EXTRA_MESSAGE, userName);
+            	    startActivity(intent);
+        		}
+        		else if(UserInformation.userType.equals("Doctor"))
+        		{
+        			Intent intent = new Intent(getApplicationContext(), 
+        					DocNurseHomeActivity.class);
+            	    startActivity(intent);
+        		}
+        		else if(UserInformation.userType.equals("Nurse"))
+        		{
+        			Intent intent = new Intent(getApplicationContext(), 
+        					DocNurseHomeActivity.class);
+            	    startActivity(intent);
+        		}
+        		else if(UserInformation.userType.equals("admin"))
+        		{
+        			Intent intent = new Intent(getApplicationContext(),
+        			      AddDoctorActivity.class);
+        			      startActivity(intent);
+        		}
         	}
         	else
         	{
@@ -116,28 +146,6 @@ public class LoginActivity extends Activity {
   public void goToRegister(View view) {
     Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
     startActivity(intent);
-  }
-
-  /**
-   * logs in an administrator. Can be removed and have this feature added to
-   * regular login once we have access control for all users.
-   */
-  public void logInAdmin(View view) {
-    EditText editText = (EditText) findViewById(R.id.userName);
-    String userName = editText.getText().toString();
-    EditText userPass = (EditText) findViewById(R.id.password);
-    String password = userPass.getText().toString();
-
-    if ((userName.equalsIgnoreCase("")) && password.equalsIgnoreCase("")) {
-      Intent intent = new Intent(getApplicationContext(),
-          AddDoctorActivity.class);
-      startActivity(intent);
-    } else {
-      // Displays an error message if login failed.
-      TextView t = new TextView(this);
-      t = (TextView) findViewById(R.id.errorMessage);
-      t.setText("Failed");
-    }
   }
 
   public void pedometer(View view) {

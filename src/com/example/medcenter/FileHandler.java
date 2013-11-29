@@ -65,9 +65,11 @@ public class FileHandler extends AESencrp {
     try {
       OutputStream os = new FileOutputStream(file);
       byte[] byteInformation = encrypt(fileData.getBytes());
+      //byte[] testBytes = fileData.getBytes();
       os.write(byteInformation);
-
+     // os.write(testBytes);
       os.close();
+      
       return new String(byteInformation);
 
     } catch (IOException e) {

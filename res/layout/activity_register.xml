@@ -30,7 +30,8 @@
         android:id="@+id/editText1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10" >
+        android:ems="10" 
+        android:text = "Matt">
         <requestFocus />
     </EditText>
 
@@ -46,7 +47,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPassword" />
+        android:inputType="textPassword"
+         android:text = "Matt" />
 
     <TextView
         android:id="@+id/textView4"
@@ -59,7 +61,8 @@
         android:id="@+id/editText3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10" />
+        android:ems="10" 
+         android:text = "Matt"/>
 
     <TextView
         android:id="@+id/textView5"
@@ -72,7 +75,8 @@
         android:id="@+id/editText4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10" />
+        android:ems="10" 
+        android:text = "Matt"/>
 
     <TextView
         android:id="@+id/textView6"
@@ -85,7 +89,8 @@
         android:id="@+id/editText5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10" />
+        android:ems="10" 
+        android:text = "154"/>
 
     <TextView
         android:id="@+id/textView7"
@@ -98,7 +103,8 @@
         android:id="@+id/editText6"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10" />
+        android:ems="10" 
+        android:text = "154"/>
 
     <TextView
         android:id="@+id/textView8"
@@ -111,7 +117,8 @@
         android:id="@+id/editText7"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10" />
+        android:ems="10" 
+        android:text = "154"/>
 
     <TextView
         android:id="@+id/textView9"
@@ -124,7 +131,8 @@
         android:id="@+id/editText8"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10" />
+        android:ems="10" 
+        android:text = "A"/>
        
      <TextView
         android:id="@+id/textView10"
