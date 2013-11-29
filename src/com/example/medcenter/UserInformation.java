@@ -93,8 +93,8 @@ public class UserInformation {
   }
 
   public static String mergePatientInfo(String username, String password,
-      String firstName, String lastName, String userType, String height,
-      String weight, String age, String bloodType) throws Exception {
+    String firstName, String lastName, String userType, String height,
+    String weight, String age, String bloodType) throws Exception {
     String username1 = new String(AESencrp.encrypt(username.getBytes()));
     String password1 = new String(AESencrp.encrypt(password.getBytes()));
     String firstName1 = new String(AESencrp.encrypt(firstName.getBytes()));
@@ -105,17 +105,16 @@ public class UserInformation {
     String height1 = new String(AESencrp.encrypt(height.getBytes()));
     String bloodType1 = new String(AESencrp.encrypt(bloodType.getBytes()));
 
-    String parser = "^*^*^";
-    String mergedData = username1 + parser + password1 + parser + firstName1
-        + parser + lastName1 + parser + userType1 + parser + age1 + parser
+    String parser = ",";
+    String mergedData = username + parser + password + parser + firstName
+        + parser + lastName + parser + userType + parser + age + parser
         + weight1 + parser + height1 + parser + bloodType1;
     return mergedData;
   }
 
-  public static String parseInfo(String userInfo) {
-    String delims = "^*^*^";
-    String[] tokens = userInfo.split(delims);
+  public static String[] parseInfo(String userInfo) {
+    String[] tokens = userInfo.split(",");
 
-    return tokens[0];
+    return tokens;
   }
 }

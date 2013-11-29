@@ -1,8 +1,13 @@
 package com.example.medcenter;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Environment;
 import android.view.Menu;
 import android.view.View;
 import android.widget.EditText;
@@ -40,13 +45,17 @@ public class LoginActivity extends Activity {
     intent.addCategory(Intent.CATEGORY_HOME);
     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
     startActivity(intent);
+    
   }
 
   /**
    * Logs in a user. It does this by grabbing the user name and password off the
    * activity page and checks them against predefined values.
+ * @throws Exception 
+ * @throws IOException 
+ * @throws FileNotFoundException 
    */
-  public void logInUser(View view) {
+  public void logInUser(View view) throws FileNotFoundException, IOException, Exception {
     EditText editText = (EditText) findViewById(R.id.userName);
     String userName = editText.getText().toString();
     EditText userPass = (EditText) findViewById(R.id.password);
@@ -56,7 +65,44 @@ public class LoginActivity extends Activity {
       Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
       intent.putExtra(EXTRA_MESSAGE, userName);
       startActivity(intent);
-    } else {
+    }else if(!userName.equalsIgnoreCase("") && !password.equalsIgnoreCase(""))
+    {
+    	// Get the directory path to the download folder and create an app
+        // folder there.
+    	String fileName = userName + ".txt";
+        String filePath = Environment.getExternalStoragePublicDirectory(
+            Environment.DIRECTORY_DOWNLOADS).toString()
+            + "/medCenter/";
+        File file = new File(filePath + fileName);
+        
+        if(file.exists() == false)
+        {
+        	// Displays an error message if login failed.
+            TextView t = new TextView(this);
+            t = (TextView) findViewById(R.id.errorMessage);
+            t.setText("Failed, account does not exists.");
+        }
+        else if(file.exists() == true)
+        {
+        	String fileData = FileHandler.ReadFile(filePath,fileName);
+        	String[] userInfo = UserInformation.parseInfo(fileData);
+        	
+        	if(password.equals(userInfo[2]))
+        	{
+        		Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+        	    intent.putExtra(EXTRA_MESSAGE, userName);
+        	    startActivity(intent);
+        	}
+        	else
+        	{
+        		// Displays an error message if login failed.
+                TextView t = new TextView(this);
+                t = (TextView) findViewById(R.id.errorMessage);
+                t.setText("Failed, incorrect password!");
+        	}
+        }
+    }
+    else {
       // Displays an error message if login failed.
       TextView t = new TextView(this);
       t = (TextView) findViewById(R.id.errorMessage);

@@ -68,14 +68,6 @@ public class RegisterActivity extends Activity {
           FileHandler.WriteFile(directoryPath + "/medCenter/", fileName,
               mergedData);
 
-          // String decrypted = FileHandler.ReadFile(directoryPath +
-          // "/medCenter/", fileName);
-          // String firstValue = UserInformation.parseInfo(decrypted);
-          // String values = new
-          // String(AESencrp.decrypt(firstValue.getBytes()));
-          // read data from an encypted file and decrypt the data.
-          // userName.setText(values);
-
           Intent intent = new Intent(getApplicationContext(),
               LoginActivity.class);
           intent.putExtra(EXTRA_MESSAGE, "Registration Successful.");
