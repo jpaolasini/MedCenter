@@ -14,7 +14,7 @@ import android.hardware.SensorManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class PedometerActivity extends Activity{
+public class PedometerActivity extends Activity {
 
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
