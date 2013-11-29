@@ -24,14 +24,14 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int action_settings=0x7f080018;
-        public static final int btnIntend=0x7f080013;
-        public static final int btnIntendS=0x7f080014;
+        public static final int action_settings=0x7f08001c;
+        public static final int btnIntend=0x7f080017;
+        public static final int btnIntendS=0x7f080018;
         public static final int button1=0x7f08000c;
         public static final int button2=0x7f08000d;
         public static final int button3=0x7f080012;
-        public static final int button4=0x7f080017;
-        public static final int button5=0x7f080016;
+        public static final int button4=0x7f08001b;
+        public static final int button5=0x7f08001a;
         public static final int editText1=0x7f080001;
         public static final int editText2=0x7f080003;
         public static final int editText3=0x7f080005;
@@ -39,7 +39,8 @@ public final class R {
         public static final int editText5=0x7f080009;
         public static final int editText6=0x7f08000b;
         public static final int errorMessage=0x7f08000e;
-        public static final int imageView1=0x7f080015;
+        public static final int image=0x7f080016;
+        public static final int imageView1=0x7f080019;
         public static final int password=0x7f080011;
         public static final int patientName=0x7f08000f;
         public static final int textView1=0x7f08000a;
@@ -49,6 +50,9 @@ public final class R {
         public static final int textView5=0x7f080008;
         public static final int textView6=0x7f080000;
         public static final int userName=0x7f080010;
+        public static final int x_axis=0x7f080013;
+        public static final int y_axis=0x7f080014;
+        public static final int z_axis=0x7f080015;
     }
     public static final class layout {
         public static final int activity_adddoctor=0x7f030000;
@@ -56,10 +60,11 @@ public final class R {
         public static final int activity_home=0x7f030002;
         public static final int activity_login=0x7f030003;
         public static final int activity_medchart=0x7f030004;
-        public static final int activity_pictures=0x7f030005;
-        public static final int activity_register=0x7f030006;
-        public static final int activity_schedule=0x7f030007;
-        public static final int activity_userinfo=0x7f030008;
+        public static final int activity_pedometer=0x7f030005;
+        public static final int activity_pictures=0x7f030006;
+        public static final int activity_register=0x7f030007;
+        public static final int activity_schedule=0x7f030008;
+        public static final int activity_userinfo=0x7f030009;
     }
     public static final class menu {
         public static final int graphing=0x7f070000;
