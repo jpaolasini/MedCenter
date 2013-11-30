@@ -16,7 +16,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class DocNurseHomeActivity extends Activity{
-
+	public final static String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
+	
 	private static final int DIALOG_ALERT = 10;
 	
 	@Override
@@ -27,8 +28,6 @@ public class DocNurseHomeActivity extends Activity{
 	    super.onCreate(savedInstanceState);
 	    setContentView(R.layout.activity_docnursehome);
 	    Intent intent = getIntent();
-	    // String message = intent.getStringExtra(LoginActivity.EXTRA_MESSAGE);
-	    // EditText editText = (EditText) findViewById(R.id.textView1);
 	  }
 	
 	/**
@@ -58,7 +57,10 @@ public class DocNurseHomeActivity extends Activity{
         }
         else if(file.exists() == true)
         {
-        	
+        	Intent intent = new Intent(getApplicationContext(), 
+					UserInfoActivity.class);
+    	    intent.putExtra(EXTRA_MESSAGE, userName.getText().toString());
+    	    startActivity(intent);
         }
 	}
 	

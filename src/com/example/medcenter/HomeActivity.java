@@ -8,11 +8,13 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class HomeActivity extends Activity {
 
 	  private static final int DIALOG_ALERT = 10;
+	  public final static String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
 
   @Override
   /**
@@ -22,8 +24,8 @@ public class HomeActivity extends Activity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_home);
     Intent intent = getIntent();
-    // String message = intent.getStringExtra(LoginActivity.EXTRA_MESSAGE);
-    // EditText editText = (EditText) findViewById(R.id.textView1);
+    String userName = intent.getStringExtra(LoginActivity.EXTRA_MESSAGE);
+    UserInformation.userName = userName;
   }
 
   /**
@@ -78,6 +80,7 @@ public class HomeActivity extends Activity {
    */
   public void viewUserInfo(View view) {
     Intent intent = new Intent(getApplicationContext(), UserInfoActivity.class);
+    intent.putExtra(EXTRA_MESSAGE, UserInformation.userName);
     startActivity(intent);
   }
 }

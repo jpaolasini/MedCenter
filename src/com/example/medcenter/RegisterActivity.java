@@ -37,7 +37,7 @@ public class RegisterActivity extends Activity {
     if (firstName.getText().toString().matches(".*\\d.*")
         || lastName.getText().toString().matches(".*\\d.*")
         || bloodType.getText().toString().matches(".*\\d.*")) {
-      userName.setHint("Incorrect Parameters");
+      userName.setText("Incorrect Parameters");
     } else {
 
       try {

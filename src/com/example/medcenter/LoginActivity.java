@@ -94,7 +94,7 @@ public class LoginActivity extends Activity {
         	String fileData = FileHandler.ReadFile(filePath,fileName);
         	String[] userInfo = UserInformation.parseInfo(fileData);
         	
-        	if(password.equals(userInfo[2]))
+        	if(password.equals(userInfo[1]))
         	{
         		UserInformation.userType = userInfo[4];
         		if(UserInformation.userType.equals("patient"))

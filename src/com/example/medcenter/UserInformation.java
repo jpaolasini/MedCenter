@@ -108,7 +108,7 @@ public class UserInformation {
     String parser = ",";
     String mergedData = username + parser + password + parser + firstName
         + parser + lastName + parser + userType + parser + age + parser
-        + weight1 + parser + height1 + parser + bloodType1;
+        + weight + parser + height + parser + bloodType;
     return mergedData;
   }
 
