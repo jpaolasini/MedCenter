@@ -20,7 +20,7 @@
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/firstName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10" 
@@ -34,7 +34,7 @@
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/lastName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10" 
@@ -48,7 +48,7 @@
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <EditText
-        android:id="@+id/editText5"
+        android:id="@+id/height"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10" 
@@ -62,7 +62,7 @@
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <EditText
-        android:id="@+id/editText6"
+        android:id="@+id/weight"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10" 
@@ -76,7 +76,7 @@
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <EditText
-        android:id="@+id/editText7"
+        android:id="@+id/age"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10" 
@@ -90,7 +90,7 @@
         android:textAppearance="?android:attr/textAppearanceMedium" />
     
         <EditText
-        android:id="@+id/editText8"
+        android:id="@+id/bloodType"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10" 

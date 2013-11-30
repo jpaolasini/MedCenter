@@ -23,13 +23,20 @@ public class UserInfoActivity extends Activity {
       	Button editInfo = (Button) findViewById(R.id.editInfoButton);      		
       	editInfo.setVisibility(View.VISIBLE);
     }
-    else
+    else if(UserInformation.userType.equals("patient"))
     {
         patientUserName = intent.getStringExtra(HomeActivity.EXTRA_MESSAGE);
         
         //Turn off the edit info button if a patient is viewing this page.	
       	Button editInfo = (Button) findViewById(R.id.editInfoButton);      		
       	editInfo.setVisibility(View.GONE);
+    }
+    else
+    {
+    	patientUserName = intent.getStringExtra(EditPatientInformationActivity.EXTRA_MESSAGE);
+    	//Turn on the edit info button if a doctor/nurse is viewing this page.	
+      	Button editInfo = (Button) findViewById(R.id.editInfoButton);      		
+      	editInfo.setVisibility(View.VISIBLE);
     }
     
     UserInformation.userName = patientUserName;

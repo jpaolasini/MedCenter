@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.EditText;
 
 public class EditPatientInformationActivity extends Activity {
+	public final static String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 	    super.onCreate(savedInstanceState);
@@ -17,54 +18,55 @@ public class EditPatientInformationActivity extends Activity {
 	    Intent intent = getIntent();
 	}
 	
-	public void confirmChanges(View view)
+	public void confirmChange(View view)
 	{
 		// Retrieve the user input from the text fields.
-	    EditText firstName = (EditText) findViewById(R.id.editText3);
-	    EditText lastName = (EditText) findViewById(R.id.editText4);
-	    EditText height = (EditText) findViewById(R.id.editText5);
-	    EditText weight = (EditText) findViewById(R.id.editText6);
-	    EditText age = (EditText) findViewById(R.id.editText7);
-	    EditText bloodType = (EditText) findViewById(R.id.editText8);
+	    String firstName = ((EditText) findViewById(R.id.firstName)).getText().toString();
+	    String lastName = ((EditText) findViewById(R.id.lastName)).getText().toString();
+	    String height = ((EditText) findViewById(R.id.height)).getText().toString();
+	    String weight = ((EditText) findViewById(R.id.weight)).getText().toString();
+	    String age = ((EditText) findViewById(R.id.age)).getText().toString();
+	    String bloodType = ((EditText) findViewById(R.id.bloodType)).getText().toString();
 	    
-	    if (firstName.getText().toString().matches(".*\\d.*")
-	            || lastName.getText().toString().matches(".*\\d.*")
-	            || bloodType.getText().toString().matches(".*\\d.*")) {
+	    if (firstName.matches(".*\\d.*")
+	            || lastName.matches(".*\\d.*")
+	            || bloodType.matches(".*\\d.*")) {
 	        } else {
 
 	          try {
 
-	            double heightDouble = Double.parseDouble(height.getText().toString());
-	            double weightDouble = Double.parseDouble(weight.getText().toString());
-	            int ageInteger = Integer.parseInt(age.getText().toString());
-
+	            double heightDouble = Double.parseDouble(height);
+	            double weightDouble = Double.parseDouble(weight);
+	            int ageInteger = Integer.parseInt(age); 
+	            
 	            // Get the directory path to the download folder and create an app
 	            // folder there.
 	            String directoryPath = Environment.getExternalStoragePublicDirectory(
 	                Environment.DIRECTORY_DOWNLOADS).toString()
 	                + "/";
-	            FileHandler.createDirectory("medCenter", directoryPath);
 
-	            // Check is username is taken
-	            File file = new File(directoryPath + "/medCenter/" + UserInformation.userName);
-	            if (file.exists() == false) {
-
+	            //delete data to be changed
+	            //File file = new File(directoryPath + "medCenter/" + UserInformation.userName + ".txt");
+	            //file.delete();
+	            
 	              // merges user information into a string to be stored.
 	              String mergedData = UserInformation.mergePatientInfo(UserInformation.userName, 
-	            		  UserInformation.userPassword, firstName.getText().toString(), lastName.getText().toString(),
-	            		  UserInformation.userType, height.getText().toString(), weight.getText().toString(),
-	            		  age.getText().toString(), bloodType.getText().toString());
+	            		  UserInformation.userPassword, firstName, lastName,
+	            		  "patient", height, weight,
+	            		  age, bloodType);
 
 	              // Encrypt data and write it to text file in the app directory.
-	              FileHandler.WriteFile(directoryPath + "/medCenter/", UserInformation.userName,
+	              FileHandler.WriteFile(directoryPath + "medCenter/", UserInformation.userName +".txt",
 	                  mergedData);
+	              
+		            Intent intent = new Intent(getApplicationContext(), UserInfoActivity.class);
+		            intent.putExtra(EXTRA_MESSAGE,UserInformation.userName);
+			        startActivity(intent);
+			    	             
 
-	            } else if (file.exists() == true) {
-	              // EditText failed = (EditText) findViewById(R.id.textView10);
-	              //userName.setText("Username Taken!");
-	            }
 	          } catch (Exception e) {
+	        	  e.printStackTrace();
 	          }
 	        }
 	}
-}
+	}

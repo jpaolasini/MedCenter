@@ -38,7 +38,7 @@ public class LoginActivity extends Activity {
     getMenuInflater().inflate(R.menu.login, menu);
     return true;
   }
-/*
+
   @Override
   public void onBackPressed() {
     Intent intent = new Intent(Intent.ACTION_MAIN);
@@ -46,7 +46,7 @@ public class LoginActivity extends Activity {
     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
     startActivity(intent);
     
-  }*/
+  }
 
   /**
    * Logs in a user. It does this by grabbing the user name and password off the
