@@ -35,29 +35,17 @@ public final class R {
         public static final int medcenter=0x7f020001;
     }
     public static final class id {
-<<<<<<< HEAD
-        public static final int action_settings=0x7f0a0022;
-        public static final int btnIntend=0x7f0a001d;
-        public static final int btnIntendS=0x7f0a001e;
-        public static final int button1=0x7f0a000f;
-        public static final int button2=0x7f0a000e;
-        public static final int button3=0x7f0a001f;
-        public static final int button4=0x7f0a0018;
-        public static final int button5=0x7f0a0020;
-        public static final int editInfoButton=0x7f0a0021;
-=======
         public static final int action_settings=0x7f0a0028;
         public static final int age=0x7f0a0016;
         public static final int bloodType=0x7f0a0018;
-        public static final int btnIntend=0x7f0a0021;
-        public static final int btnIntendS=0x7f0a0022;
+        public static final int btnIntend=0x7f0a0022;
+        public static final int btnIntendS=0x7f0a0023;
         public static final int button1=0x7f0a000f;
         public static final int button2=0x7f0a000e;
         public static final int button3=0x7f0a0025;
-        public static final int button4=0x7f0a001f;
+        public static final int button4=0x7f0a001d;
         public static final int button5=0x7f0a0026;
         public static final int editInfoButton=0x7f0a0027;
->>>>>>> ebef96fc841d4ddfcdf6a4d75bf0d07837d29b44
         public static final int editText1=0x7f0a0001;
         public static final int editText2=0x7f0a0003;
         public static final int editText3=0x7f0a0005;
@@ -65,26 +53,16 @@ public final class R {
         public static final int editText5=0x7f0a0009;
         public static final int editText6=0x7f0a000b;
         public static final int editText7=0x7f0a000d;
-<<<<<<< HEAD
-        public static final int editText8=0x7f0a0013;
-        public static final int errorMessage=0x7f0a0016;
-        public static final int image=0x7f0a001c;
-        public static final int imageView1=0x7f0a001a;
-        public static final int mySimpleXYPlot=0x7f0a0015;
-        public static final int password=0x7f0a0017;
-        public static final int patientName=0x7f0a0019;
-=======
         public static final int editText8=0x7f0a0024;
         public static final int errorMessage=0x7f0a001b;
         public static final int firstName=0x7f0a0011;
         public static final int height=0x7f0a0013;
-        public static final int image=0x7f0a0020;
-        public static final int imageView1=0x7f0a0023;
+        public static final int image=0x7f0a0021;
+        public static final int imageView1=0x7f0a001f;
         public static final int lastName=0x7f0a0012;
         public static final int mySimpleXYPlot=0x7f0a001a;
-        public static final int password=0x7f0a001e;
-        public static final int patientName=0x7f0a001c;
->>>>>>> ebef96fc841d4ddfcdf6a4d75bf0d07837d29b44
+        public static final int password=0x7f0a001c;
+        public static final int patientName=0x7f0a001e;
         public static final int spinner1=0x7f0a0010;
         public static final int textView1=0x7f0a0000;
         public static final int textView10=0x7f0a0019;
@@ -94,16 +72,10 @@ public final class R {
         public static final int textView5=0x7f0a0008;
         public static final int textView6=0x7f0a000a;
         public static final int textView7=0x7f0a000c;
-<<<<<<< HEAD
-        public static final int textView8=0x7f0a0011;
-        public static final int textView9=0x7f0a0012;
-        public static final int userName=0x7f0a001b;
-=======
         public static final int textView8=0x7f0a0015;
         public static final int textView9=0x7f0a0017;
-        public static final int userName=0x7f0a001d;
+        public static final int userName=0x7f0a0020;
         public static final int weight=0x7f0a0014;
->>>>>>> ebef96fc841d4ddfcdf6a4d75bf0d07837d29b44
     }
     public static final class layout {
         public static final int activity_adddoctor=0x7f030000;
