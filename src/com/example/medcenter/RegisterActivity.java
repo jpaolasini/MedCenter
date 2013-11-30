@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class RegisterActivity extends Activity {
   public final static String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
@@ -68,10 +69,15 @@ public class RegisterActivity extends Activity {
           FileHandler.WriteFile(directoryPath + "/medCenter/", fileName,
               mergedData);
 
-          Intent intent = new Intent(getApplicationContext(),
-              LoginActivity.class);
-          intent.putExtra(EXTRA_MESSAGE, "Registration Successful.");
-          startActivity(intent);
+     Intent intent = new Intent(getApplicationContext(),
+             LoginActivity.class);
+
+     Toast.makeText(getApplicationContext(), "Registration Successful",
+	          Toast.LENGTH_LONG).show();
+     
+         startActivity(intent);
+          
+          
         } else if (file.exists() == true) {
           // EditText failed = (EditText) findViewById(R.id.textView10);
           userName.setText("Username Taken!");

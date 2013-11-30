@@ -10,8 +10,10 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.view.Menu;
 import android.view.View;
+import android.view.Window;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class LoginActivity extends Activity {
 
@@ -24,6 +26,7 @@ public class LoginActivity extends Activity {
    */
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
+    this.requestWindowFeature(Window.FEATURE_NO_TITLE);
     setContentView(R.layout.activity_login);
     Intent intent = getIntent();
     String message = intent.getStringExtra(LoginActivity.EXTRA_MESSAGE);
@@ -38,7 +41,7 @@ public class LoginActivity extends Activity {
     getMenuInflater().inflate(R.menu.login, menu);
     return true;
   }
-/*
+
   @Override
   public void onBackPressed() {
     Intent intent = new Intent(Intent.ACTION_MAIN);
@@ -46,7 +49,7 @@ public class LoginActivity extends Activity {
     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
     startActivity(intent);
     
-  }*/
+  }
 
   /**
    * Logs in a user. It does this by grabbing the user name and password off the
@@ -85,9 +88,8 @@ public class LoginActivity extends Activity {
         if(file.exists() == false)
         {
         	// Displays an error message if login failed.
-            TextView t = new TextView(this);
-            t = (TextView) findViewById(R.id.errorMessage);
-            t.setText("Failed, account does not exists.");
+        	Toast.makeText(getApplicationContext(), "Failed, User does not exist!",
+  		          Toast.LENGTH_LONG).show();
         }
         else if(file.exists() == true)
         {
@@ -125,18 +127,23 @@ public class LoginActivity extends Activity {
         	}
         	else
         	{
+        		
+        		//Design Change to Toasts-JP
+        		
+        		
         		// Displays an error message if login failed.
-                TextView t = new TextView(this);
-                t = (TextView) findViewById(R.id.errorMessage);
-                t.setText("Failed, incorrect password!");
+//                TextView t = new TextView(this);
+//                t = (TextView) findViewById(R.id.errorMessage);
+//                t.setText("Failed, incorrect password!");
+        		Toast.makeText(getApplicationContext(), "Failed, incorrect password!",
+        		          Toast.LENGTH_LONG).show();
         	}
         }
     }
     else {
       // Displays an error message if login failed.
-      TextView t = new TextView(this);
-      t = (TextView) findViewById(R.id.errorMessage);
-      t.setText("Failed");
+    	Toast.makeText(getApplicationContext(), "Failed",
+		          Toast.LENGTH_LONG).show();
     }
   }
 
