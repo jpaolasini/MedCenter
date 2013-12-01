@@ -16,6 +16,7 @@
         <item>Nurse</item>
     </string-array>
     <string-array name="bloodtype">
+        <item>Unknown</item>
         <item>O+</item>
         <item>O-</item>
         <item>A+</item>
