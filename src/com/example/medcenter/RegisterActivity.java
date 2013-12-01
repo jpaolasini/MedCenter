@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 public class RegisterActivity extends Activity {
@@ -31,13 +32,14 @@ public class RegisterActivity extends Activity {
     EditText height = (EditText) findViewById(R.id.editText5);
     EditText weight = (EditText) findViewById(R.id.editText6);
     EditText age = (EditText) findViewById(R.id.editText7);
-    EditText bloodType = (EditText) findViewById(R.id.editText8);
+    Spinner bloodType = (Spinner) findViewById(R.id.spinner1);
+    //EditText bloodType = (EditText) findViewById(R.id.editText8);
     String patientType = "patient";
     String fileName = userName.getText().toString() + ".txt";
 
     if (firstName.getText().toString().matches(".*\\d.*")
         || lastName.getText().toString().matches(".*\\d.*")
-        || bloodType.getText().toString().matches(".*\\d.*")) {
+        || bloodType.getSelectedItem().toString().matches(".*\\d.*")) {
       userName.setText("Incorrect Parameters");
     } else {
 
@@ -62,8 +64,8 @@ public class RegisterActivity extends Activity {
               .getText().toString(), password.getText().toString(), firstName
               .getText().toString(), lastName.getText().toString(),
               patientType, height.getText().toString(), weight.getText()
-                  .toString(), age.getText().toString(), bloodType.getText()
-                  .toString());
+                  .toString(), age.getText().toString(), bloodType
+                  .getSelectedItem().toString());
 
           // Encrypt data and write it to text file in the app directory.
           FileHandler.WriteFile(directoryPath + "/medCenter/", fileName,

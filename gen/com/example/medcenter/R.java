@@ -9,6 +9,7 @@ package com.example.medcenter;
 
 public final class R {
     public static final class array {
+        public static final int bloodtype=0x7f070001;
         public static final int doctornurse=0x7f070000;
     }
     public static final class attr {
@@ -35,17 +36,17 @@ public final class R {
         public static final int medcenter=0x7f020001;
     }
     public static final class id {
-        public static final int action_settings=0x7f0a0028;
+        public static final int action_settings=0x7f0a0027;
         public static final int age=0x7f0a0016;
         public static final int bloodType=0x7f0a0018;
         public static final int btnIntend=0x7f0a0022;
         public static final int btnIntendS=0x7f0a0023;
         public static final int button1=0x7f0a000f;
         public static final int button2=0x7f0a000e;
-        public static final int button3=0x7f0a0025;
+        public static final int button3=0x7f0a0024;
         public static final int button4=0x7f0a001d;
-        public static final int button5=0x7f0a0026;
-        public static final int editInfoButton=0x7f0a0027;
+        public static final int button5=0x7f0a0025;
+        public static final int editInfoButton=0x7f0a0026;
         public static final int editText1=0x7f0a0001;
         public static final int editText2=0x7f0a0003;
         public static final int editText3=0x7f0a0005;
@@ -53,7 +54,6 @@ public final class R {
         public static final int editText5=0x7f0a0009;
         public static final int editText6=0x7f0a000b;
         public static final int editText7=0x7f0a000d;
-        public static final int editText8=0x7f0a0024;
         public static final int errorMessage=0x7f0a001b;
         public static final int firstName=0x7f0a0011;
         public static final int height=0x7f0a0013;

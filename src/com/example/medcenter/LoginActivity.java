@@ -32,7 +32,7 @@ public class LoginActivity extends Activity {
     String message = intent.getStringExtra(LoginActivity.EXTRA_MESSAGE);
     TextView t = new TextView(this);
     t = (TextView) findViewById(R.id.errorMessage);
-    t.setText(message);
+    //t.setText(message);
   }
 
   @Override
@@ -88,7 +88,7 @@ public class LoginActivity extends Activity {
         if(file.exists() == false)
         {
         	// Displays an error message if login failed.
-        	Toast.makeText(getApplicationContext(), "Failed, User does not exist!",
+        	Toast.makeText(getApplicationContext(), "User does not exist!",
   		          Toast.LENGTH_LONG).show();
         }
         else if(file.exists() == true)
@@ -135,7 +135,7 @@ public class LoginActivity extends Activity {
 //                TextView t = new TextView(this);
 //                t = (TextView) findViewById(R.id.errorMessage);
 //                t.setText("Failed, incorrect password!");
-        		Toast.makeText(getApplicationContext(), "Failed, incorrect password!",
+        		Toast.makeText(getApplicationContext(), "Incorrect password!",
         		          Toast.LENGTH_LONG).show();
         	}
         }

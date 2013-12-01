@@ -6,11 +6,13 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -50,10 +52,18 @@ public class DocNurseHomeActivity extends Activity{
         
         if(file.exists() == false)
         {
-        	// Displays an error message if login failed.
-            TextView t = new TextView(this);
+        	// Displays an error message if login failed and hides the keyboard
+        	InputMethodManager inputManager = (InputMethodManager)            
+        			  this.getSystemService(Context.INPUT_METHOD_SERVICE); 
+        			    inputManager.hideSoftInputFromWindow(this.getCurrentFocus().getWindowToken(),      
+        			    InputMethodManager.HIDE_NOT_ALWAYS);
+        			    
+        	Toast.makeText(getApplicationContext(), "Incorrect patient username!", Toast.LENGTH_LONG).show();
+            
+        	
+        	/*TextView t = new TextView(this);
             t = (TextView) findViewById(R.id.textView2);
-            t.setText("Incorrect patient username!");
+            t.setText("Incorrect patient username!");*/
         }
         else if(file.exists() == true)
         {
