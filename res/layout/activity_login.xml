@@ -29,26 +29,6 @@
         android:onClick="logInUser"
         android:text="Log In" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/password"
-        android:layout_alignRight="@+id/patientName"
-        android:text="Password:"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <EditText
-        android:id="@+id/userName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/textView2"
-        android:layout_alignLeft="@+id/password"
-        android:ems="10" >
-
-        <requestFocus />
-    </EditText>
-
     <ImageView
         android:id="@+id/imageView1"
         android:layout_width="wrap_content"
@@ -57,6 +37,17 @@
         android:layout_alignLeft="@+id/button1"
         android:layout_marginBottom="24dp"
         android:src="@drawable/medcenter" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/imageView1"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/button1"
+        android:layout_marginBottom="24dp"
+        android:onClick="goToRegister"
+        android:text="Register" />
 
     <TextView
         android:id="@+id/patientName"
@@ -73,19 +64,28 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/button1"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="84dp"
+        android:layout_marginBottom="108dp"
         android:ems="10"
-        android:inputType="textPassword" />
+        android:inputType="textPassword" >
 
-    <Button
-        android:id="@+id/button2"
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/imageView1"
-        android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/button1"
-        android:layout_marginBottom="24dp"
-        android:onClick="goToRegister"
-        android:text="Register" />
+        android:layout_above="@+id/password"
+        android:layout_alignRight="@+id/patientName"
+        android:text="Password:"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/userName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textView2"
+        android:layout_alignLeft="@+id/password"
+        android:ems="10" />
 
 </RelativeLayout>
