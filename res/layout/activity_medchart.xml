@@ -4,4 +4,49 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
+     <TextView
+        android:id="@+id/errorMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Patient Name"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/lastTetnus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="lastTetnus"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/lastFlu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="lastFlu"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+
+    <TextView
+        android:id="@+id/hasHernia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="hasHernia"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+    
+    <TextView
+        android:id="@+id/hasBloodInUrine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="hasBloodInUrine"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+    
+    <TextView
+        android:id="@+id/hasDiabetes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="hasDiabetes"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+    
+   
+    
 </LinearLayout>

@@ -32,10 +32,11 @@ public class RegisterActivity extends Activity {
     EditText height = (EditText) findViewById(R.id.editText5);
     EditText weight = (EditText) findViewById(R.id.editText6);
     EditText age = (EditText) findViewById(R.id.editText7);
+    Spinner gender = (Spinner) findViewById(R.id.spinner2);
     Spinner bloodType = (Spinner) findViewById(R.id.spinner1);
-    //EditText bloodType = (EditText) findViewById(R.id.editText8);
     String patientType = "patient";
     String fileName = userName.getText().toString() + ".txt";
+    String[] prescriptions = {};
 
     if (firstName.getText().toString().matches(".*\\d.*")
         || lastName.getText().toString().matches(".*\\d.*")
@@ -56,16 +57,16 @@ public class RegisterActivity extends Activity {
             + "/";
         FileHandler.createDirectory("medCenter", directoryPath);
 
-        // Check is username is taken
+        // Check if username is taken
         File file = new File(directoryPath + "/medCenter/" + fileName);
         if (file.exists() == false) {
           // merges user information into a string to be stored.
           String mergedData = UserInformation.mergePatientInfo(userName
               .getText().toString(), password.getText().toString(), firstName
-              .getText().toString(), lastName.getText().toString(),
+              .getText().toString(), lastName.getText().toString(),gender.getSelectedItem().toString(),
               patientType, height.getText().toString(), weight.getText()
                   .toString(), age.getText().toString(), bloodType
-                  .getSelectedItem().toString());
+                  .getSelectedItem().toString(),"","","","","",prescriptions);
 
           // Encrypt data and write it to text file in the app directory.
           FileHandler.WriteFile(directoryPath + "/medCenter/", fileName,

@@ -11,6 +11,10 @@ public final class R {
     public static final class array {
         public static final int bloodtype=0x7f070001;
         public static final int doctornurse=0x7f070000;
+        public static final int gender=0x7f070002;
+        public static final int hasBloodInUrine=0x7f070005;
+        public static final int hasDiabetes=0x7f070003;
+        public static final int hasHernia=0x7f070004;
     }
     public static final class attr {
     }
@@ -36,17 +40,19 @@ public final class R {
         public static final int medcenter=0x7f020001;
     }
     public static final class id {
-        public static final int action_settings=0x7f0a0027;
-        public static final int age=0x7f0a0016;
-        public static final int bloodType=0x7f0a0018;
-        public static final int btnIntend=0x7f0a0022;
-        public static final int btnIntendS=0x7f0a0023;
+        public static final int action_settings=0x7f0a0032;
+        public static final int age=0x7f0a0017;
+        public static final int btnIntend=0x7f0a002b;
+        public static final int btnIntendS=0x7f0a002c;
         public static final int button1=0x7f0a000f;
         public static final int button2=0x7f0a000e;
-        public static final int button3=0x7f0a0024;
-        public static final int button4=0x7f0a001d;
-        public static final int button5=0x7f0a0025;
-        public static final int editInfoButton=0x7f0a0026;
+        public static final int button3=0x7f0a002e;
+        public static final int button4=0x7f0a0021;
+        public static final int button5=0x7f0a002f;
+        public static final int datePicker1=0x7f0a001a;
+        public static final int datePicker2=0x7f0a001b;
+        public static final int editInfoButton=0x7f0a0030;
+        public static final int editMedicalHistoryButton=0x7f0a0031;
         public static final int editText1=0x7f0a0001;
         public static final int editText2=0x7f0a0003;
         public static final int editText3=0x7f0a0005;
@@ -54,42 +60,52 @@ public final class R {
         public static final int editText5=0x7f0a0009;
         public static final int editText6=0x7f0a000b;
         public static final int editText7=0x7f0a000d;
-        public static final int errorMessage=0x7f0a001b;
+        public static final int errorMessage=0x7f0a001f;
         public static final int firstName=0x7f0a0011;
-        public static final int height=0x7f0a0013;
-        public static final int image=0x7f0a0021;
-        public static final int imageView1=0x7f0a001f;
+        public static final int hasBloodInUrine=0x7f0a0028;
+        public static final int hasDiabetes=0x7f0a0029;
+        public static final int hasHernia=0x7f0a0027;
+        public static final int height=0x7f0a0014;
+        public static final int image=0x7f0a002a;
+        public static final int imageView1=0x7f0a0023;
+        public static final int lastFlu=0x7f0a0026;
         public static final int lastName=0x7f0a0012;
-        public static final int mySimpleXYPlot=0x7f0a001a;
-        public static final int password=0x7f0a001c;
-        public static final int patientName=0x7f0a001e;
+        public static final int lastTetnus=0x7f0a0025;
+        public static final int mySimpleXYPlot=0x7f0a001e;
+        public static final int password=0x7f0a0020;
+        public static final int patientName=0x7f0a0022;
         public static final int spinner1=0x7f0a0010;
+        public static final int spinner2=0x7f0a0013;
+        public static final int spinner3=0x7f0a001c;
+        public static final int spinner4=0x7f0a001d;
         public static final int textView1=0x7f0a0000;
         public static final int textView10=0x7f0a0019;
+        public static final int textView11=0x7f0a002d;
         public static final int textView2=0x7f0a0002;
         public static final int textView3=0x7f0a0004;
         public static final int textView4=0x7f0a0006;
         public static final int textView5=0x7f0a0008;
         public static final int textView6=0x7f0a000a;
         public static final int textView7=0x7f0a000c;
-        public static final int textView8=0x7f0a0015;
-        public static final int textView9=0x7f0a0017;
-        public static final int userName=0x7f0a0020;
-        public static final int weight=0x7f0a0014;
+        public static final int textView8=0x7f0a0016;
+        public static final int textView9=0x7f0a0018;
+        public static final int userName=0x7f0a0024;
+        public static final int weight=0x7f0a0015;
     }
     public static final class layout {
         public static final int activity_adddoctor=0x7f030000;
         public static final int activity_docnursehome=0x7f030001;
         public static final int activity_editpatientinfo=0x7f030002;
-        public static final int activity_graphing=0x7f030003;
-        public static final int activity_home=0x7f030004;
-        public static final int activity_login=0x7f030005;
-        public static final int activity_medchart=0x7f030006;
-        public static final int activity_pedometer=0x7f030007;
-        public static final int activity_pictures=0x7f030008;
-        public static final int activity_register=0x7f030009;
-        public static final int activity_schedule=0x7f03000a;
-        public static final int activity_userinfo=0x7f03000b;
+        public static final int activity_editpatientmed=0x7f030003;
+        public static final int activity_graphing=0x7f030004;
+        public static final int activity_home=0x7f030005;
+        public static final int activity_login=0x7f030006;
+        public static final int activity_medchart=0x7f030007;
+        public static final int activity_pedometer=0x7f030008;
+        public static final int activity_pictures=0x7f030009;
+        public static final int activity_register=0x7f03000a;
+        public static final int activity_schedule=0x7f03000b;
+        public static final int activity_userinfo=0x7f03000c;
     }
     public static final class menu {
         public static final int graphing=0x7f090000;

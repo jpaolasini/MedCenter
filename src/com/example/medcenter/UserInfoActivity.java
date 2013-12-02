@@ -10,20 +10,38 @@ import android.widget.TextView;
 
 public class UserInfoActivity extends Activity {
 	public final static String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
+	 private static final int DIALOG_ALERT = 10;
+	 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_userinfo);
     Intent intent = getIntent();
     String patientUserName = "";
-    if(UserInformation.userType.equals("Doctor") || UserInformation.userType.equals("Nurse"))
+    
+    if(UserInformation.userType.equals("Doctor"))
+    {
+    	patientUserName = intent.getStringExtra(DocNurseHomeActivity.EXTRA_MESSAGE);
+    	//Turn on the edit info button if a doctor/nurse is viewing this page.	
+      	Button editInfo = (Button) findViewById(R.id.editInfoButton);      		
+      	editInfo.setVisibility(View.GONE);
+      	
+      	//Turn on the edit info button if a doctor/nurse is viewing this page.	
+      	Button editMed = (Button) findViewById(R.id.editMedicalHistoryButton);      		
+      	editMed.setVisibility(View.VISIBLE);
+    }
+    else if(UserInformation.userType.equals("Nurse"))
     {
     	patientUserName = intent.getStringExtra(DocNurseHomeActivity.EXTRA_MESSAGE);
     	//Turn on the edit info button if a doctor/nurse is viewing this page.	
       	Button editInfo = (Button) findViewById(R.id.editInfoButton);      		
       	editInfo.setVisibility(View.VISIBLE);
+      	
+      	//Turn on the edit info button if a doctor/nurse is viewing this page.	
+      	Button editMed = (Button) findViewById(R.id.editMedicalHistoryButton);      		
+      	editMed.setVisibility(View.GONE);
+    	
     }
-    
     else if(UserInformation.userType.equals("patient"))
     {
         patientUserName = intent.getStringExtra(HomeActivity.EXTRA_MESSAGE);
@@ -31,6 +49,9 @@ public class UserInfoActivity extends Activity {
         //Turn off the edit info button if a patient is viewing this page.	
       	Button editInfo = (Button) findViewById(R.id.editInfoButton);      		
       	editInfo.setVisibility(View.GONE);
+      	
+      	Button editMed = (Button) findViewById(R.id.editMedicalHistoryButton);      		
+      	editMed.setVisibility(View.GONE);
     }
     else
     {
@@ -52,6 +73,7 @@ public class UserInfoActivity extends Activity {
 		String data = FileHandler.ReadFile(directoryPath + "medCenter/", fileName);
 		String[] patientInfo = UserInformation.parseInfo(data);
 		UserInformation.userPassword = patientInfo[1];
+		
 		//Display the patients information
 	    TextView patientName = new TextView(this);
 		patientName = (TextView) findViewById(R.id.errorMessage);
@@ -59,21 +81,33 @@ public class UserInfoActivity extends Activity {
 		
 		TextView age = new TextView(this);
 		age = (TextView) findViewById(R.id.textView2);
-		age.setText("Age: " + patientInfo[5]);	
+		age.setText("Age: " + patientInfo[6]);	
+		
+		TextView gender = new TextView(this);
+		age = (TextView) findViewById(R.id.textView1);
+		age.setText("Gender: " + patientInfo[4]);	
 		
 		TextView weight = new TextView(this);
 		weight = (TextView) findViewById(R.id.textView3);
-		weight.setText("Weight: " + patientInfo[6]);	
+		weight.setText("Weight: " + patientInfo[7]);	
 		
 		TextView height = new TextView(this);
 		height = (TextView) findViewById(R.id.textView4);
-		height.setText("Height: " + patientInfo[7]);	
+		height.setText("Height: " + patientInfo[8]);	
 		
 		TextView bloodType = new TextView(this);
 		bloodType = (TextView) findViewById(R.id.textView5);
-		bloodType.setText("BloodType: " + patientInfo[8]);			
+		bloodType.setText("BloodType: " + patientInfo[9]);			
     } catch (Exception e) {  		
 	}    
+    
+  }
+  
+  //Return to the DocNurseHomeActivity page.
+  @Override
+  public void onBackPressed() {
+    Intent intent = new Intent(getApplicationContext(), DocNurseHomeActivity.class);
+    startActivity(intent);
     
   }
 
@@ -87,6 +121,7 @@ public class UserInfoActivity extends Activity {
   // Go to the medical chart activity
   public void goToMedChart(View view) {
     Intent intent = new Intent(getApplicationContext(), MedChartActivity.class);
+    intent.putExtra(EXTRA_MESSAGE, UserInformation.userName);
     startActivity(intent);
   }
 
@@ -104,6 +139,13 @@ public class UserInfoActivity extends Activity {
   public void goToEditPatientInfo (View view)
   {
 	  Intent intent = new Intent(getApplicationContext(), EditPatientInformationActivity.class);
+	  intent.putExtra(EXTRA_MESSAGE,UserInformation.userName);
+	  startActivity(intent);
+  }
+  
+  public void goToEditPatientMedicalHistory (View view)
+  {
+	  Intent intent = new Intent(getApplicationContext(), EditPatientMedicalHistory.class);
 	  intent.putExtra(EXTRA_MESSAGE,UserInformation.userName);
 	  startActivity(intent);
   }

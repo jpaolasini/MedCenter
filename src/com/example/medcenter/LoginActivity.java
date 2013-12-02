@@ -94,11 +94,11 @@ public class LoginActivity extends Activity {
         else if(file.exists() == true)
         {
         	String fileData = FileHandler.ReadFile(filePath,fileName);
-        	String[] userInfo = UserInformation.parseInfo(fileData);
+        	String[] userInfo = UserInformation.parseInfo(fileData);        	
         	
         	if(password.equals(userInfo[1]))
         	{
-        		UserInformation.userType = userInfo[4];
+        		UserInformation.userType = userInfo[5];
         		if(UserInformation.userType.equals("patient"))
         		{
         			Intent intent = new Intent(getApplicationContext(), 

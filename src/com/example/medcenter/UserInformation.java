@@ -5,12 +5,20 @@ public class UserInformation {
   static String userPassword;
   static String firstName;
   static String lastName;
+  static String gender;
   static String userType;
-  static int userAge;
+  static int[] userAge;
   static double[] weight;
   static double height;
   static String bloodType;
-  static String prescripions;
+  static String lastTetnus;
+  static String lastFlu;
+  static String hasHernia;
+  static String hasBloodInUrine;
+  static String hasDiabetes;
+  static String isPregnant;
+  static String[] prescriptions;
+  
 
   public String getUserName() {
     return userName;
@@ -32,7 +40,7 @@ public class UserInformation {
     return userType;
   }
 
-  public int getUserAge() {
+  public int[] getUserAge() {
     return userAge;
   }
 
@@ -42,10 +50,6 @@ public class UserInformation {
 
   public double getheight() {
     return height;
-  }
-
-  public String getPrescripions() {
-    return prescripions;
   }
 
   public String getBloodType() {
@@ -72,7 +76,7 @@ public class UserInformation {
     this.userType = userType;
   }
 
-  public void setUserAge(int userAge) {
+  public void setUserAge(int[] userAge) {
     this.userAge = userAge;
   }
 
@@ -84,31 +88,27 @@ public class UserInformation {
     this.height = height;
   }
 
-  public void setPrescripions(String prescripions) {
-    this.prescripions = prescripions;
-  }
 
   public void setBloodType(String bloodType) {
     this.bloodType = bloodType;
   }
 
   public static String mergePatientInfo(String username, String password,
-    String firstName, String lastName, String userType, String height,
-    String weight, String age, String bloodType) throws Exception {
-    String username1 = new String(AESencrp.encrypt(username.getBytes()));
-    String password1 = new String(AESencrp.encrypt(password.getBytes()));
-    String firstName1 = new String(AESencrp.encrypt(firstName.getBytes()));
-    String lastName1 = new String(AESencrp.encrypt(lastName.getBytes()));
-    String userType1 = new String(AESencrp.encrypt(userType.getBytes()));
-    String age1 = new String(AESencrp.encrypt(age.getBytes()));
-    String weight1 = new String(AESencrp.encrypt(weight.getBytes()));
-    String height1 = new String(AESencrp.encrypt(height.getBytes()));
-    String bloodType1 = new String(AESencrp.encrypt(bloodType.getBytes()));
+    String firstName, String lastName, String gender, String userType, String height,
+    String weight, String age, String bloodType, String lastTetnus,String lastFlu,
+		String hasHernia, String hasBloodInUrine, String hasDiabetes, String[] prescriptions) throws Exception {
 
-    String parser = ",";
+	String parser = ",";
+	String prescriptionString = "";
+	for(int i = 0; i < prescriptions.length; i++)
+	{
+		prescriptionString = prescriptionString + prescriptions[i] + ":";
+	}
+
     String mergedData = username + parser + password + parser + firstName
-        + parser + lastName + parser + userType + parser + age + parser
-        + weight + parser + height + parser + bloodType;
+        + parser + lastName + parser + gender + parser + userType + parser + age + parser
+        + weight + parser + height + parser + bloodType + parser + lastTetnus + parser + lastFlu + parser + hasHernia + parser
+		+ hasBloodInUrine + parser + hasDiabetes + parser + "[" + prescriptionString + "]";
     return mergedData;
   }
 

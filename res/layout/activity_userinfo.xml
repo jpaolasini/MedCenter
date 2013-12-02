@@ -19,6 +19,13 @@
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Gender"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -74,5 +81,12 @@
         android:layout_height="wrap_content"
         android:onClick="goToEditPatientInfo"
         android:text="Edit Patient Information" />
+
+    <Button
+        android:id="@+id/editMedicalHistoryButton"
+        android:layout_width="224dp"
+        android:layout_height="wrap_content"
+        android:onClick="goToEditPatientMedicalHistory"
+        android:text="Edit Medical History" />
 
 </LinearLayout>

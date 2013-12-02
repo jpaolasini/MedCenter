@@ -77,26 +77,18 @@ public class DoctorNurseInformation {
   public static String mergeDoctorNurseInfo(String type, String username,
       String password, String firstName, String lastName, String department,
       String number, String email) throws Exception {
-    String type1 = new String(AESencrp.encrypt(type.getBytes()));
-    String username1 = new String(AESencrp.encrypt(username.getBytes()));
-    String password1 = new String(AESencrp.encrypt(password.getBytes()));
-    String firstName1 = new String(AESencrp.encrypt(firstName.getBytes()));
-    String lastName1 = new String(AESencrp.encrypt(lastName.getBytes()));
-    String department1 = new String(AESencrp.encrypt(department.getBytes()));
-    String number1 = new String(AESencrp.encrypt(number.getBytes()));
-    String email1 = new String(AESencrp.encrypt(email.getBytes()));
 
     String parser = ",";
     String mergedData = username + parser + password + parser
-        + firstName + parser + lastName + parser + type + parser + department + parser
+        + firstName + parser + lastName + parser + " " + parser +  type + parser + department + parser
         + number + parser + email;
     return mergedData;
   }
 
-  public static String parseInfo(String userInfo) {
+  public static String[] parseInfo(String userInfo) {
     String delims = ",";
     String[] tokens = userInfo.split(delims);
 
-    return tokens[0];
+    return tokens;
   }
 }
