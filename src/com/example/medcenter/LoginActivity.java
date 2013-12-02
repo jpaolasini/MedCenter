@@ -102,7 +102,7 @@ public class LoginActivity extends Activity {
         		if(UserInformation.userType.equals("patient"))
         		{
         			Intent intent = new Intent(getApplicationContext(), 
-        					HomeActivity.class);
+        					UserInfoActivity.class);
             	    intent.putExtra(EXTRA_MESSAGE, userName);
             	    startActivity(intent);
         		}
