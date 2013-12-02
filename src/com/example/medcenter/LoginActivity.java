@@ -154,10 +154,4 @@ public class LoginActivity extends Activity {
     Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
     startActivity(intent);
   }
-
-  public void pedometer(View view) {
-    Intent intent = new Intent(getApplicationContext(), PedometerActivity.class);
-    startActivity(intent);
-
-  }
 }

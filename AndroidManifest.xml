@@ -65,10 +65,6 @@
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name="com.example.medcenter.PedometerActivity"
-            android:label="@string/app_name" >
-        </activity>
-        <activity
             android:name="com.example.medcenter.DocNurseHomeActivity"
             android:label="@string/app_name" >
         </activity>
