@@ -57,11 +57,11 @@ public final class R {
         public static final int errorMessage=0x7f0a001b;
         public static final int firstName=0x7f0a0011;
         public static final int height=0x7f0a0013;
-        public static final int imageView1=0x7f0a001f;
+        public static final int imageView1=0x7f0a001d;
         public static final int lastName=0x7f0a0012;
         public static final int mySimpleXYPlot=0x7f0a001a;
         public static final int password=0x7f0a001c;
-        public static final int patientName=0x7f0a001d;
+        public static final int patientName=0x7f0a001e;
         public static final int spinner1=0x7f0a0010;
         public static final int textView1=0x7f0a0000;
         public static final int textView10=0x7f0a0019;
@@ -73,7 +73,7 @@ public final class R {
         public static final int textView7=0x7f0a000c;
         public static final int textView8=0x7f0a0015;
         public static final int textView9=0x7f0a0017;
-        public static final int userName=0x7f0a001e;
+        public static final int userName=0x7f0a001f;
         public static final int weight=0x7f0a0014;
     }
     public static final class layout {
