@@ -26,6 +26,18 @@ public class MedChartActivity extends Activity {
         //Turn off the edit info button if a patient is viewing this page.	
       	//Button editInfo = (Button) findViewById(R.id.editInfoButton);      		
       	//editInfo.setVisibility(View.GONE);
+      TextView name = (TextView) findViewById(R.id.errorMessage);
+      TextView lastTetnus = (TextView) findViewById(R.id.lastTetnus);
+      TextView lastFlu = (TextView) findViewById(R.id.lastFlu);
+      TextView hasHernia = (TextView) findViewById(R.id.hasHernia);
+      TextView hasBloodInUrine = (TextView) findViewById(R.id.hasBloodInUrine);
+      TextView hasDiabetes = (TextView) findViewById(R.id.hasDiabetes);
+      name.setText(UserInformation.firstName+" "+UserInformation.lastName);
+      lastTetnus.setText("Last Tetnus: "+UserInformation.lastTetnus);
+      lastFlu.setText("Last Flu Shot: "+UserInformation.lastFlu);
+      hasHernia.setText("Hernia"+UserInformation.hasHernia);
+      hasBloodInUrine.setText("Blood in Urine"+UserInformation.hasBloodInUrine);
+      hasDiabetes.setText("Diabetes"+UserInformation.hasDiabetes);
     }
     
     UserInformation.userName = patientUserName;
