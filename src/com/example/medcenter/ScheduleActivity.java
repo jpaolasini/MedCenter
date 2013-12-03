@@ -15,8 +15,9 @@ public class ScheduleActivity extends Activity {
     
     // String message = intent.getStringExtra(LoginActivity.EXTRA_MESSAGE);
     // EditText editText = (EditText) findViewById(R.id.textView1);
+  
   }
-  public void calenderevent(Calendar begintime, Calendar endtime){
+  public void calendarEvent(Calendar begintime, Calendar endtime){
 
 	    Intent intent = new Intent(Intent.ACTION_EDIT);
 	    intent.setType("vnd.android.cursor.item/event");
