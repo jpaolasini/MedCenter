@@ -1,5 +1,8 @@
 package com.example.medcenter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -73,23 +76,39 @@ public class UserInfoActivity extends Activity {
 		String data = FileHandler.ReadFile(directoryPath + "medCenter/", fileName);
 		String[] patientInfo = UserInformation.parseInfo(data);
 		UserInformation.userPassword = patientInfo[1];
+		String weight = patientInfo[7];
+		String age = patientInfo[6];
+		
+		 //Get array of weight
+		   // List<Integer> weightArray = new ArrayList<Integer>();
+		    weight = weight.replace("[", "");
+		    weight = weight.replace("]", "");
+		    String[] weightArray = weight.split(":");
+		    int currentWeight = weightArray.length;
+		    
+		    //get array of age.
+		   // List<Integer> ageArray = new ArrayList<Integer>();
+		    age = age.replace("[", "");
+		    age = age.replace("]", "");
+		    String[] ageArray = age.split(":");
+		    int currentAge = ageArray.length;
 		
 		//Display the patients information
 	    TextView patientName = new TextView(this);
 		patientName = (TextView) findViewById(R.id.errorMessage);
 		patientName.setText(patientInfo[2] + " " + patientInfo[3]);	
 		
-		TextView age = new TextView(this);
-		age = (TextView) findViewById(R.id.textView2);
-		age.setText("Age: " + patientInfo[6]);	
+		TextView ageText = new TextView(this);
+		ageText = (TextView) findViewById(R.id.textView2);
+		ageText.setText("Age: " + ageArray[currentAge-1]);	
 		
 		TextView gender = new TextView(this);
-		age = (TextView) findViewById(R.id.textView1);
-		age.setText("Gender: " + patientInfo[4]);	
+		gender = (TextView) findViewById(R.id.textView1);
+		gender.setText("Gender: " + patientInfo[4]);	
 		
-		TextView weight = new TextView(this);
-		weight = (TextView) findViewById(R.id.textView3);
-		weight.setText("Weight: " + patientInfo[7]);	
+		TextView weightText = new TextView(this);
+		weightText = (TextView) findViewById(R.id.textView3);
+		weightText.setText("Weight: " + weightArray[currentWeight-1]);	
 		
 		TextView height = new TextView(this);
 		height = (TextView) findViewById(R.id.textView4);

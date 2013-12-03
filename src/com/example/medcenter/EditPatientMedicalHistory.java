@@ -1,5 +1,8 @@
 package com.example.medcenter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -60,11 +63,33 @@ public class EditPatientMedicalHistory extends Activity{
 		    		String age = patientInfo[6];
 		    		String bloodType = patientInfo[9];
 		    		
+			 		    
+		    		
+			 		    //Get array of weight
+		    			List<Integer> weightArray = new ArrayList<Integer>();
+			 		    weight = weight.replace("[", "");
+			 		    weight = weight.replace("]", "");
+			 		    String[] weightStringArray = weight.split(":");
+			 		    for(int i = 0; i < weightStringArray.length; i++)
+			 		    {
+			 		    	weightArray.add(Integer.parseInt(weightStringArray[i]));
+			 		    }
+			 		    
+			 		    //get array of age.
+			 		    List<Integer> ageArray = new ArrayList<Integer>();
+			 		    age = age.replace("[", "");
+			 		    age = age.replace("]", "");
+			 		    String[] ageStringArray = age.split(":");
+			 		    for(int i = 0; i < ageStringArray.length; i++)
+			 		    {
+			 		    	ageArray.add(Integer.parseInt(ageStringArray[i]));
+			 		    }
+		    		
 		            
 		              // merges user information into a string to be stored.
 		              String mergedData = UserInformation.mergePatientInfo(UserInformation.userName, 
 		            		  UserInformation.userPassword, firstName, lastName, gender,
-		            		  "patient", height, weight, age, bloodType,lastTetnus, 
+		            		  "patient", height, weightArray, ageArray, bloodType,lastTetnus, 
 		            		  lastFlu, hasHernia, hasBloodInUrine, hasDiabetes, prescriptions);
 
 		              // Encrypt data and write it to text file in the app directory.

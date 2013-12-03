@@ -1,6 +1,8 @@
 package com.example.medcenter;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -31,7 +33,13 @@ public class RegisterActivity extends Activity {
     EditText lastName = (EditText) findViewById(R.id.editText4);
     EditText height = (EditText) findViewById(R.id.editText5);
     EditText weight = (EditText) findViewById(R.id.editText6);
+    List<Integer> weightArray = new ArrayList<Integer>();
+    weightArray.add(Integer.parseInt(weight.getText().toString()));
+    
     EditText age = (EditText) findViewById(R.id.editText7);
+    List<Integer> ageArray = new ArrayList<Integer>();
+    ageArray.add(Integer.parseInt(age.getText().toString()));
+    
     Spinner gender = (Spinner) findViewById(R.id.spinner2);
     Spinner bloodType = (Spinner) findViewById(R.id.spinner1);
     String patientType = "patient";
@@ -64,8 +72,7 @@ public class RegisterActivity extends Activity {
           String mergedData = UserInformation.mergePatientInfo(userName
               .getText().toString(), password.getText().toString(), firstName
               .getText().toString(), lastName.getText().toString(),gender.getSelectedItem().toString(),
-              patientType, height.getText().toString(), weight.getText()
-                  .toString(), age.getText().toString(), bloodType
+              patientType, height.getText().toString(), weightArray, ageArray, bloodType
                   .getSelectedItem().toString(),"","","","","",prescriptions);
 
           // Encrypt data and write it to text file in the app directory.

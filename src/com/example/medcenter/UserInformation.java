@@ -1,5 +1,7 @@
 package com.example.medcenter;
 
+import java.util.List;
+
 public class UserInformation {
   static String userName;
   static String userPassword;
@@ -8,8 +10,8 @@ public class UserInformation {
   static String gender;
   static String userType;
   static int[] userAge;
-  static double[] weight;
-  static double height;
+  static int[] weight;
+  static int height;
   static String bloodType;
   static String lastTetnus;
   static String lastFlu;
@@ -44,10 +46,6 @@ public class UserInformation {
     return userAge;
   }
 
-  public double[] getWeight() {
-    return weight;
-  }
-
   public double getheight() {
     return height;
   }
@@ -80,14 +78,6 @@ public class UserInformation {
     this.userAge = userAge;
   }
 
-  public void setWeight(double[] weight) {
-    this.weight = weight;
-  }
-
-  public void setheight(double height) {
-    this.height = height;
-  }
-
 
   public void setBloodType(String bloodType) {
     this.bloodType = bloodType;
@@ -95,19 +85,29 @@ public class UserInformation {
 
   public static String mergePatientInfo(String username, String password,
     String firstName, String lastName, String gender, String userType, String height,
-    String weight, String age, String bloodType, String lastTetnus,String lastFlu,
+    List<Integer> weight, List<Integer> age, String bloodType, String lastTetnus,String lastFlu,
 		String hasHernia, String hasBloodInUrine, String hasDiabetes, String[] prescriptions) throws Exception {
-
+	
+	  //Set up string[] to a string.
 	String parser = ",";
 	String prescriptionString = "";
+	String weightString = "";
+	String ageString = "";
+	for(int i = 0; i < weight.size(); i++)
+	{
+		weightString = weightString + weight.get(i) + ":";
+	}for(int i = 0; i < age.size(); i++)
+	{
+		ageString = ageString + age.get(i) + ":";
+	}
 	for(int i = 0; i < prescriptions.length; i++)
 	{
 		prescriptionString = prescriptionString + prescriptions[i] + ":";
 	}
 
     String mergedData = username + parser + password + parser + firstName
-        + parser + lastName + parser + gender + parser + userType + parser + age + parser
-        + weight + parser + height + parser + bloodType + parser + lastTetnus + parser + lastFlu + parser + hasHernia + parser
+        + parser + lastName + parser + gender + parser + userType + parser + "[" + ageString + "]" + parser
+        + "[" + weightString + "]" + parser + height + parser + bloodType + parser + lastTetnus + parser + lastFlu + parser + hasHernia + parser
 		+ hasBloodInUrine + parser + hasDiabetes + parser + "[" + prescriptionString + "]";
     return mergedData;
   }
