@@ -99,7 +99,7 @@ public class UserInfoActivity extends Activity {
 		//Display the patients information
 	    TextView patientName = new TextView(this);
 		patientName = (TextView) findViewById(R.id.errorMessage);
-		patientName.setText(patientInfo[2] + " " + patientInfo[3]);	
+		patientName.setText(patientInfo[2] + " " + patientInfo[3] );	
 
 		
 		TextView ageText = new TextView(this);

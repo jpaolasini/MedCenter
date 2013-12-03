@@ -64,12 +64,7 @@ public class LoginActivity extends Activity {
     EditText userPass = (EditText) findViewById(R.id.password);
     String password = userPass.getText().toString();
 
-    if ((userName.equalsIgnoreCase("")) && password.equalsIgnoreCase("")) {
-      Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
-      intent.putExtra(EXTRA_MESSAGE, userName);
-      startActivity(intent);
-    }
-    else if((userName.equals("A")) && password.equals("A"))
+    if((userName.equals("A")) && password.equals("A"))
     {//This is an admin login in order to demonstrate adding doctors/nurses.
     	Intent intent = new Intent(getApplicationContext(),
 			      AddDoctorActivity.class);

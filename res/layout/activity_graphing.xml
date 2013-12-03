@@ -4,16 +4,10 @@
                android:layout_width="fill_parent"
                android:layout_height="fill_parent">
 
-    <TextView
-        android:id="@+id/test"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView" />
-
     <com.androidplot.xy.XYPlot
         android:id="@+id/mySimpleXYPlot"
         android:layout_width="fill_parent"
-        android:layout_height="377dp"
+        android:layout_height="match_parent"
         androidPlot.domainLabel=""
         androidPlot.domainLabelWidget.labelPaint.textSize="@dimen/domain_label_font_size"
         androidPlot.graphWidget.domainLabelPaint.textSize="@dimen/domain_tick_label_font_size"

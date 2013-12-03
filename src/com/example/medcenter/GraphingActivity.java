@@ -7,11 +7,8 @@ import java.util.Arrays;
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.Environment;
+import android.util.Log;
 import android.view.WindowManager;
-<<<<<<< HEAD
-import android.widget.TextView;
-=======
->>>>>>> 898eee61761e56c0f280cb150f8923f9a817bd83
 
 import com.androidplot.xy.LineAndPointFormatter;
 import com.androidplot.xy.PointLabelFormatter;
@@ -25,7 +22,6 @@ import com.androidplot.xy.XYSeries;
 public class GraphingActivity extends Activity {
 
   private XYPlot plot;
-  String patientUserName = "";
   @Override
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -36,15 +32,14 @@ public class GraphingActivity extends Activity {
         + "/";
     
     String fileName = UserInformation.userName + ".txt";
-    TextView t = new TextView(this);
-    t = (TextView) findViewById(R.id.test);
-    t.setText(UserInformation.userName);
+    Log.d("FILENAME", fileName);
     
     //Read existing user data from file.
     String data;
 	try {
 		data = FileHandler.ReadFile(directoryPath + "medCenter/", fileName);
 		String[] patientInfo = UserInformation.parseInfo(data);
+		Log.d("PATIENTINFO", patientInfo[6]);
 
 	    // fun little snippet that prevents users from taking screenshots
 	    // on ICS+ devices :-)
@@ -52,7 +47,6 @@ public class GraphingActivity extends Activity {
 	        WindowManager.LayoutParams.FLAG_SECURE);
 
 	    setContentView(R.layout.activity_graphing);
-	    UserInformation.userName = patientUserName;
 	    // Get the directory path to the download folder and create an app
 	    // folder there.
 	  
@@ -68,12 +62,18 @@ ageString = ageString.replace("[","");
 weightString = weightString.replace("[","");
 
 String[] weight = weightString.split(":");
-
-String[] age = weightString.split(":");
+String[] age = ageString.split(":");
 
 Integer[] ageArray = new Integer[age.length];
 Integer[] weightArray = new Integer[weight.length];
 
+for(int i = 0; i < ageArray.length; i++){
+	ageArray[i] = Integer.parseInt(age[i]);
+}
+for(int i = 0; i<weightArray.length; i++)
+{
+	weightArray[i] = Integer.parseInt(weight[i]);
+}
 
 	    // initialize our XYPlot reference:
 	    plot = (XYPlot) findViewById(R.id.mySimpleXYPlot);
@@ -82,6 +82,8 @@ Integer[] weightArray = new Integer[weight.length];
 	    Integer[] xVals = ageArray;
 	    Integer[] yVals = weightArray;
 
+	    Log.d("xVals", String.valueOf(xVals));
+	    Log.d("yVals", String.valueOf(yVals));
 	    // Turn the above arrays into XYSeries':
 	    XYSeries series1 = new SimpleXYSeries(Arrays.asList(xVals), // SimpleXYSeries
 	                                                                // takes a List
