@@ -90,13 +90,8 @@ for(int i = 0; i<weightArray.length; i++)
 	   
 
 	    // Turn the above arrays into XYSeries':
-	    XYSeries series1 = new SimpleXYSeries(Arrays.asList(xVals), // SimpleXYSeries
-	                                                                // takes a List
-	                                                                // so turn our
-	                                                                // array into a
-	                                                                // List
-	    Arrays.asList(yVals), "Weight"); // Set the display title of the series
-
+	    XYSeries series1 = new SimpleXYSeries(Arrays.asList(xVals), Arrays.asList(yVals), "Weight"); // Set the display title of the series
+	    
 	    // Create a formatter to use for drawing a series using LineAndPointRenderer
 	    // and configure it from xml:
 	    LineAndPointFormatter series1Format = new LineAndPointFormatter();

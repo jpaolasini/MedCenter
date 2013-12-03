@@ -32,9 +32,9 @@ public class EditPatientMedicalHistory extends Activity{
 		    String lastTetnusYear = String.valueOf(((DatePicker) findViewById(R.id.datePicker1)).getYear());
 		    String lastTetnus = lastTetnusDay + "/" + lastTetnusMonth + "/" + lastTetnusYear;
 		    
-		    String lastFluDay = String.valueOf(((DatePicker) findViewById(R.id.datePicker1)).getDayOfMonth());
-		    String lastFluMonth = String.valueOf(((DatePicker) findViewById(R.id.datePicker1)).getMonth());
-		    String lastFluYear = String.valueOf(((DatePicker) findViewById(R.id.datePicker1)).getYear()); 
+		    String lastFluDay = String.valueOf(((DatePicker) findViewById(R.id.datePicker2)).getDayOfMonth());
+		    String lastFluMonth = String.valueOf(((DatePicker) findViewById(R.id.datePicker2)).getMonth());
+		    String lastFluYear = String.valueOf(((DatePicker) findViewById(R.id.datePicker2)).getYear()); 
 		    String lastFlu = lastFluDay + "/" + lastFluMonth + "/" + lastFluYear;
 		   
 		    String hasHernia = ((Spinner) findViewById(R.id.spinner2)).getSelectedItem().toString();
