@@ -88,7 +88,7 @@ public class UserInformation {
     List<Integer> weight, List<Integer> age, String bloodType, String lastTetnus,String lastFlu,
 		String hasHernia, String hasBloodInUrine, String hasDiabetes, String[] prescriptions) throws Exception {
 	
-	  //Set up string[] to a string.
+	//Set up string[] to a string.
 	String parser = ",";
 	String prescriptionString = "";
 	String weightString = "";

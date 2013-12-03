@@ -1,15 +1,21 @@
 package com.example.medcenter;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Arrays;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
 import android.view.WindowManager;
-import com.androidplot.xy.*;
+import android.widget.TextView;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.Arrays;
+import com.androidplot.xy.LineAndPointFormatter;
+import com.androidplot.xy.PointLabelFormatter;
+import com.androidplot.xy.SimpleXYSeries;
+import com.androidplot.xy.XYPlot;
+import com.androidplot.xy.XYSeries;
 
 /**
  * A straightforward example of using AndroidPlot to plot some data.
@@ -28,6 +34,9 @@ public class GraphingActivity extends Activity {
         + "/";
     
     String fileName = UserInformation.userName + ".txt";
+    TextView t = new TextView(this);
+    t = (TextView) findViewById(R.id.test);
+    t.setText(UserInformation.userName);
     
     //Read existing user data from file.
     String data;
