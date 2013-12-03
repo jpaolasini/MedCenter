@@ -7,9 +7,11 @@ import java.util.Arrays;
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.Environment;
-import android.util.Log;
 import android.view.WindowManager;
+<<<<<<< HEAD
 import android.widget.TextView;
+=======
+>>>>>>> 898eee61761e56c0f280cb150f8923f9a817bd83
 
 import com.androidplot.xy.LineAndPointFormatter;
 import com.androidplot.xy.PointLabelFormatter;
@@ -50,20 +52,35 @@ public class GraphingActivity extends Activity {
 	        WindowManager.LayoutParams.FLAG_SECURE);
 
 	    setContentView(R.layout.activity_graphing);
-
-	    Log.d("weight",patientInfo[6]);
 	    UserInformation.userName = patientUserName;
 	    // Get the directory path to the download folder and create an app
 	    // folder there.
 	  
 	    	//Get the patients information.
 
+
+String ageString = patientInfo[6];
+String weightString = patientInfo[7];
+
+ageString = ageString.replace("]","");
+weightString = weightString.replace("]","");
+ageString = ageString.replace("[","");
+weightString = weightString.replace("[","");
+
+String[] weight = weightString.split(":");
+
+String[] age = weightString.split(":");
+
+Integer[] ageArray = new Integer[age.length];
+Integer[] weightArray = new Integer[weight.length];
+
+
 	    // initialize our XYPlot reference:
 	    plot = (XYPlot) findViewById(R.id.mySimpleXYPlot);
 
 	    // Create a couple arrays of y-values to plot:
-	    Integer[] xVals = { 1, 2, 3, 4, 5, 6 };
-	    Integer[] yVals = { Integer.parseInt(patientInfo[6]), Integer.parseInt(patientInfo[6]), 124, 125, 127, 160 };
+	    Integer[] xVals = ageArray;
+	    Integer[] yVals = weightArray;
 
 	    // Turn the above arrays into XYSeries':
 	    XYSeries series1 = new SimpleXYSeries(Arrays.asList(xVals), // SimpleXYSeries
