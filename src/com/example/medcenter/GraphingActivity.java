@@ -9,12 +9,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
 import android.view.WindowManager;
-<<<<<<< HEAD
 
-import android.widget.TextView;
-
-=======
->>>>>>> b1d360fda79562f4ab41ff79f9b81b372ec5f85d
 
 import com.androidplot.xy.LineAndPointFormatter;
 import com.androidplot.xy.PointLabelFormatter;
@@ -37,23 +32,16 @@ public class GraphingActivity extends Activity {
     String directoryPath = Environment.getExternalStoragePublicDirectory(
         Environment.DIRECTORY_DOWNLOADS).toString()
         + "/";
-<<<<<<< HEAD
-    
-
-
-    String fileName = UserInformation.userName+ ".txt";
-
-
-
-
-=======
 
 
 
     String fileName = UserInformation.userName+ ".txt";
 
-    
->>>>>>> b1d360fda79562f4ab41ff79f9b81b372ec5f85d
+
+
+
+
+
     //Read existing user data from file.
     String data;
 	try {
@@ -107,14 +95,11 @@ for(int i = 0; i<weightArray.length; i++)
 	   Log.d("test",xVals[1].toString());
 
 	    // Turn the above arrays into XYSeries':
-<<<<<<< HEAD
+
 	    XYSeries series1 = new SimpleXYSeries(Arrays.asList(xVals),Arrays.asList(yVals), "Weight"); 
 	    // Set the display title of the series
 
-=======
-	    XYSeries series1 = new SimpleXYSeries(Arrays.asList(xVals), Arrays.asList(yVals), "Weight"); // Set the display title of the series
-	    
->>>>>>> b1d360fda79562f4ab41ff79f9b81b372ec5f85d
+
 	    // Create a formatter to use for drawing a series using LineAndPointRenderer
 	    // and configure it from xml:
 	    LineAndPointFormatter series1Format = new LineAndPointFormatter();
