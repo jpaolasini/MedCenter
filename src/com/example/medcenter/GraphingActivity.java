@@ -65,7 +65,7 @@ weightString = weightString.replace("[","");
 
 String[] weight = weightString.split(":");
 
-String[] age = weightString.split(":");
+String[] age = ageString.split(":");
 
 Integer[] ageArray = new Integer[age.length];
 Integer[] weightArray = new Integer[weight.length];
@@ -88,9 +88,14 @@ for(int i = 0; i<weightArray.length; i++)
 	    Integer[] yVals = weightArray;
 	    
 	   
-
-	    // Turn the above arrays into XYSeries':
-	    XYSeries series1 = new SimpleXYSeries(Arrays.asList(xVals), Arrays.asList(yVals), "Weight"); // Set the display title of the series
+	    XYSeries series1 = new SimpleXYSeries(
+                Arrays.asList(xVals),          // SimpleXYSeries takes a List so turn our array into a List
+                Arrays.asList(yVals), // Y_VALS_ONLY means use the element index as the x value
+                "Series1");                             // Set the display title of the series
+ 
+        // same as above
+        //XYSeries series2 = new SimpleXYSeries(Arrays.asList(yVals), SimpleXYSeries.ArrayFormat.Y_VALS_ONLY, "Series2");
+ 
 	    
 	    // Create a formatter to use for drawing a series using LineAndPointRenderer
 	    // and configure it from xml:
