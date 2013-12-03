@@ -2,10 +2,12 @@ package com.example.medcenter;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.os.Environment;
 import android.view.WindowManager;
-import com.androidplot.xy.SimpleXYSeries;
-import com.androidplot.xy.XYSeries;
 import com.androidplot.xy.*;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Arrays;
 
 /**
@@ -14,7 +16,7 @@ import java.util.Arrays;
 public class GraphingActivity extends Activity {
 
   private XYPlot plot;
-
+  String patientUserName = "";
   @Override
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -25,6 +27,13 @@ public class GraphingActivity extends Activity {
         WindowManager.LayoutParams.FLAG_SECURE);
 
     setContentView(R.layout.activity_graphing);
+
+    
+    UserInformation.userName = patientUserName;
+    // Get the directory path to the download folder and create an app
+    // folder there.
+  
+    	//Get the patients information.
 
     // initialize our XYPlot reference:
     plot = (XYPlot) findViewById(R.id.mySimpleXYPlot);
@@ -55,5 +64,6 @@ public class GraphingActivity extends Activity {
     plot.setTicksPerRangeLabel(3);
     plot.getGraphWidget().setDomainLabelOrientation(-45);
 
-  }
+  
+}
 }
