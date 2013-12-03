@@ -12,7 +12,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical" >
-            
+      
+    <TextView
+        android:id="@+id/errorMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="100dp"
+        android:text="Patient Name"
+        android:textSize="25dp"
+        android:textStyle="bold"/>
+    
+    
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
@@ -98,9 +109,8 @@
         android:layout_width="228dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/button4"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="5dp"
         android:layout_marginLeft="50dp"
+        android:layout_marginTop="5dp"
         android:onClick="goToEditPatientInfo"
         android:text="Edit Patient Information" />
 
@@ -114,14 +124,7 @@
         android:text="Edit Medical History"
         android:layout_marginTop="5dp" />
 
-    <TextView
-        android:id="@+id/errorMessage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="100dp"
-        android:text="Patient Name"
-        android:textStyle="bold"/>
+    
 
 
     <Button
