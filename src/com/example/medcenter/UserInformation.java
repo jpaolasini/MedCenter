@@ -104,7 +104,7 @@ public class UserInformation {
 	{if(i==0){
 		ageString = ageString + age.get(i);}
 	else{
-		ageString = ageString + ":"+age.get(i);
+		ageString = ageString + ":" + age.get(i);
 	}
 	}
 	
