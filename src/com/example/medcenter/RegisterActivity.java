@@ -3,10 +3,12 @@ package com.example.medcenter;
 import java.io.File;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -41,7 +43,14 @@ public class RegisterActivity extends Activity {
     if (firstName.getText().toString().matches(".*\\d.*")
         || lastName.getText().toString().matches(".*\\d.*")
         || bloodType.getSelectedItem().toString().matches(".*\\d.*")) {
-      userName.setText("Incorrect Parameters");
+      //userName.setText("Incorrect Parameters");
+    	
+      //show a toast message when there are incorrect values and hide keyboard 
+      Toast.makeText(getApplicationContext(), "You have incorrect values!",Toast.LENGTH_LONG).show();
+      InputMethodManager inputManager = (InputMethodManager)            
+			  this.getSystemService(Context.INPUT_METHOD_SERVICE); 
+			    inputManager.hideSoftInputFromWindow(this.getCurrentFocus().getWindowToken(),      
+			    InputMethodManager.HIDE_NOT_ALWAYS);
     } else {
 
       try {
@@ -83,10 +92,22 @@ public class RegisterActivity extends Activity {
           
         } else if (file.exists() == true) {
           // EditText failed = (EditText) findViewById(R.id.textView10);
-          userName.setText("Username Taken!");
+          //userName.setText("Username Taken!");
+          //show a toast message when there are incorrect values and hide keyboard 
+          Toast.makeText(getApplicationContext(), "This username is already taken",Toast.LENGTH_LONG).show();
+          InputMethodManager inputManager = (InputMethodManager)            
+    			  this.getSystemService(Context.INPUT_METHOD_SERVICE); 
+    			    inputManager.hideSoftInputFromWindow(this.getCurrentFocus().getWindowToken(),      
+    			    InputMethodManager.HIDE_NOT_ALWAYS);
         }
       } catch (Exception e) {
-        userName.setHint("Incorrect Parameters");
+       // userName.setHint("Incorrect Parameters");
+      //show a toast message when there are incorrect values and hide keyboard 
+        Toast.makeText(getApplicationContext(), "You have incorrect values!",Toast.LENGTH_LONG).show();
+        InputMethodManager inputManager = (InputMethodManager)            
+  			  this.getSystemService(Context.INPUT_METHOD_SERVICE); 
+  			    inputManager.hideSoftInputFromWindow(this.getCurrentFocus().getWindowToken(),      
+  			    InputMethodManager.HIDE_NOT_ALWAYS);
       }
     }
   }
