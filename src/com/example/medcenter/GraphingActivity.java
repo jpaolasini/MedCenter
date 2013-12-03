@@ -10,6 +10,7 @@ import android.os.Environment;
 import android.util.Log;
 import android.view.WindowManager;
 
+
 import com.androidplot.xy.LineAndPointFormatter;
 import com.androidplot.xy.PointLabelFormatter;
 import com.androidplot.xy.SimpleXYSeries;
@@ -36,7 +37,11 @@ public class GraphingActivity extends Activity {
 
     String fileName = UserInformation.userName+ ".txt";
 
-    
+
+
+
+
+
     //Read existing user data from file.
     String data;
 	try {
@@ -87,6 +92,7 @@ for(int i = 0; i<weightArray.length; i++)
 	    Integer[] xVals = ageArray;
 	    Integer[] yVals = weightArray;
 	    
+<<<<<<< HEAD
 	   
 	    XYSeries series1 = new SimpleXYSeries(
                 Arrays.asList(xVals),          // SimpleXYSeries takes a List so turn our array into a List
@@ -97,6 +103,16 @@ for(int i = 0; i<weightArray.length; i++)
         //XYSeries series2 = new SimpleXYSeries(Arrays.asList(yVals), SimpleXYSeries.ArrayFormat.Y_VALS_ONLY, "Series2");
  
 	    
+=======
+	   Log.d("test",xVals[1].toString());
+
+	    // Turn the above arrays into XYSeries':
+
+	    XYSeries series1 = new SimpleXYSeries(Arrays.asList(xVals),Arrays.asList(yVals), "Weight"); 
+	    // Set the display title of the series
+
+
+>>>>>>> bc1cc331903d36e86f80af06c19cea87a2e1d1e3
 	    // Create a formatter to use for drawing a series using LineAndPointRenderer
 	    // and configure it from xml:
 	    LineAndPointFormatter series1Format = new LineAndPointFormatter();
