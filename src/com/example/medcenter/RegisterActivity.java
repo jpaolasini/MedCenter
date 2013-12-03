@@ -31,7 +31,7 @@ public class RegisterActivity extends Activity {
     case DIALOG_ALERT:
       // create out AlterDialog
       Builder builder = new AlertDialog.Builder(this);
-      builder.setMessage("Cancel Registration?");
+      builder.setMessage("Cancel registration?");
       builder.setCancelable(true);
       builder.setPositiveButton("Yes", new OkOnClickListener());
       builder.setNegativeButton("No", new CancelOnClickListener());

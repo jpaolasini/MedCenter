@@ -105,7 +105,7 @@ public final class R {
         public static final int activity_pictures=0x7f030008;
         public static final int activity_register=0x7f030009;
         public static final int activity_schedule=0x7f03000a;
-        public static final int activity_userinfo=0x7f03000b;
+        public static final int activity_userinf=0x7f03000b;
     }
     public static final class menu {
         public static final int graphing=0x7f090000;

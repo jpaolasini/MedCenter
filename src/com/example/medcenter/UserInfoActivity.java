@@ -20,7 +20,7 @@ public class UserInfoActivity extends Activity {
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_userinfo);
+    setContentView(R.layout.activity_userinf);
     Intent intent = getIntent();
     String patientUserName = "";
     
