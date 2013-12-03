@@ -32,14 +32,14 @@ public class EditPatientMedicalHistory extends Activity{
 		    String lastTetnusYear = String.valueOf(((DatePicker) findViewById(R.id.datePicker1)).getYear());
 		    String lastTetnus = lastTetnusDay + "/" + lastTetnusMonth + "/" + lastTetnusYear;
 		    
-		    String lastFluDay = String.valueOf(((DatePicker) findViewById(R.id.datePicker1)).getDayOfMonth());
-		    String lastFluMonth = String.valueOf(((DatePicker) findViewById(R.id.datePicker1)).getMonth());
-		    String lastFluYear = String.valueOf(((DatePicker) findViewById(R.id.datePicker1)).getYear()); 
+		    String lastFluDay = String.valueOf(((DatePicker) findViewById(R.id.datePicker2)).getDayOfMonth());
+		    String lastFluMonth = String.valueOf(((DatePicker) findViewById(R.id.datePicker2)).getMonth());
+		    String lastFluYear = String.valueOf(((DatePicker) findViewById(R.id.datePicker2)).getYear()); 
 		    String lastFlu = lastFluDay + "/" + lastFluMonth + "/" + lastFluYear;
 		   
 		    String hasHernia = ((Spinner) findViewById(R.id.spinner2)).getSelectedItem().toString();
-		    String hasBloodInUrine = ((Spinner) findViewById(R.id.spinner2)).getSelectedItem().toString();
-		    String hasDiabetes = ((Spinner) findViewById(R.id.spinner2)).getSelectedItem().toString();
+		    String hasBloodInUrine = ((Spinner) findViewById(R.id.spinner3)).getSelectedItem().toString();
+		    String hasDiabetes = ((Spinner) findViewById(R.id.spinner4)).getSelectedItem().toString();
 		    String[] prescriptions = {"none","some","maybe"};
 		    
 		          try {
