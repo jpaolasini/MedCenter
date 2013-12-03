@@ -91,33 +91,16 @@ for(int i = 0; i<weightArray.length; i++)
 	    // Create a couple arrays of y-values to plot:
 	    Integer[] xVals = ageArray;
 	    Integer[] yVals = weightArray;
-<<<<<<< HEAD
 
-	   
-=======
-	    
->>>>>>> ef0452e1b9546b4b0ba7679b6c3673af188b7a55
 	    XYSeries series1 = new SimpleXYSeries(
                 Arrays.asList(xVals),          // SimpleXYSeries takes a List so turn our array into a List
                 Arrays.asList(yVals), // Y_VALS_ONLY means use the element index as the x value
                 "Weight");                             // Set the display title of the series
- 
-<<<<<<< HEAD
-=======
-        // same as above
-        //XYSeries series2 = new SimpleXYSeries(Arrays.asList(yVals), SimpleXYSeries.ArrayFormat.Y_VALS_ONLY, "Series2");
- 
-	    
 
->>>>>>> ef0452e1b9546b4b0ba7679b6c3673af188b7a55
 	   Log.d("test",xVals[1].toString());
 
 	    // Turn the above arrays into XYSeries':
 
-<<<<<<< HEAD
-=======
-
->>>>>>> ef0452e1b9546b4b0ba7679b6c3673af188b7a55
 	    // Create a formatter to use for drawing a series using LineAndPointRenderer
 	    // and configure it from xml:
 	    LineAndPointFormatter series1Format = new LineAndPointFormatter();

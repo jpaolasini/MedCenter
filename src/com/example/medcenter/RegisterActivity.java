@@ -87,8 +87,43 @@ public class RegisterActivity extends Activity {
     String patientType = "patient";
     String fileName = userName.getText().toString() + ".txt";
     String[] prescriptions = {};
+    
+    if (userName.getText().toString().equals("")
+            || userName.getText().toString().equals("Username Taken!")
+            || password.getText().toString().equals("")
+            || firstName.getText().toString().equals("")
+            || lastName.getText().toString().equals("")
+            || height.getText().toString().equals("")
+            || weight.getText().toString().equals("")
+            || age.getText().toString().equals("")
+            || patientType.equals("")) {
+          if (userName.getText().toString().equals("")) {
+            userName.setHint("Field Cannot be Empty");
+          }
+          if (password.getText().toString().equals("")) {
+            password.setHint("Field Cannot be Empty");
+          }
+          if (firstName.getText().toString().equals("")) {
+            firstName.setHint("Field Cannot be Empty");
+          }
+          if (lastName.getText().toString().equals("")) {
+            lastName.setHint("Field Cannot be Empty");
+          }
+          if (height.getText().toString().equals("")) {
+            height.setHint("Field Cannot be Empty");
+          }
+          if (weight.getText().toString().equals("")) {
+            weight.setHint("Field Cannot be Empty");
+          }
+          if (age.getText().toString().equals("")) {
+            age.setHint("Field Cannot be Empty");
+          }
+          if (patientType.equals("")) {
+                weight.setHint("Field Cannot be Empty");
+          }
+    }
 
-    if (firstName.getText().toString().matches(".*\\d.*")
+    else if (firstName.getText().toString().matches(".*\\d.*")
         || lastName.getText().toString().matches(".*\\d.*")
         || bloodType.getSelectedItem().toString().matches(".*\\d.*")) {
       //userName.setText("Incorrect Parameters");
@@ -158,4 +193,4 @@ public class RegisterActivity extends Activity {
       }
     }
   }
-}
+  }

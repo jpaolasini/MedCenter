@@ -121,7 +121,7 @@
         android:layout_marginTop="25dp"
         android:layout_centerHorizontal="true"
         android:onClick="goToPictures"
-        android:text="View Pictures" />
+        android:text="Take Pictures" />
     
     <Button
         android:id="@+id/PrescriptionMan"
