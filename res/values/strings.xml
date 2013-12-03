@@ -11,6 +11,7 @@
     <string name="cannot">Cannot</string>
     <string name="album_name">CameraSample</string>
     <string name="title_activity_graphing">GraphingActivity</string>
+
     <string-array name="doctornurse">
         <item>Doctor</item>
         <item>Nurse</item>
@@ -42,6 +43,7 @@
         <item>Yes</item>
         <item>No</item>
     </string-array>
-    
+
+    <string name="title_activity_prescription_manager">PrescriptionManager</string>
 
 </resources>

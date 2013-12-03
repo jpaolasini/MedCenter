@@ -133,6 +133,12 @@ public class UserInfoActivity extends Activity {
         PhotoIntentActivity.class);
     startActivity(intent);
   }
+  
+  //go to the prescription manager
+  public void goToPrescriptionMan(View view) {
+	  Intent intent = new Intent(getApplicationContext(), PrescriptionManager.class);
+	  startActivity(intent);
+  }
 
   // Go to the medical chart activity
   public void goToMedChart(View view) {
