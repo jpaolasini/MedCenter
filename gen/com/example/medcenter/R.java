@@ -45,21 +45,20 @@ public final class R {
     public static final class id {
         public static final int AddDocNurseButton=0x7f0a001f;
         public static final int DeleteUserButton=0x7f0a0020;
-        public static final int PrescriptionMan=0x7f0a0035;
-        public static final int action_settings=0x7f0a0036;
+        public static final int PrescriptionMan=0x7f0a0034;
+        public static final int action_settings=0x7f0a0035;
         public static final int age=0x7f0a0017;
         public static final int btnIntend=0x7f0a002b;
-        public static final int btnIntendS=0x7f0a002c;
         public static final int button1=0x7f0a000f;
         public static final int button2=0x7f0a000e;
-        public static final int button3=0x7f0a0030;
-        public static final int button4=0x7f0a0032;
-        public static final int button5=0x7f0a0031;
-        public static final int calendarView1=0x7f0a002e;
+        public static final int button3=0x7f0a002f;
+        public static final int button4=0x7f0a0031;
+        public static final int button5=0x7f0a0030;
+        public static final int calendarView1=0x7f0a002d;
         public static final int datePicker1=0x7f0a001a;
         public static final int datePicker2=0x7f0a001b;
-        public static final int editInfoButton=0x7f0a0033;
-        public static final int editMedicalHistoryButton=0x7f0a0034;
+        public static final int editInfoButton=0x7f0a0032;
+        public static final int editMedicalHistoryButton=0x7f0a0033;
         public static final int editText1=0x7f0a0001;
         public static final int editText2=0x7f0a0003;
         public static final int editText3=0x7f0a0005;
@@ -86,7 +85,7 @@ public final class R {
         public static final int spinner4=0x7f0a001d;
         public static final int textView1=0x7f0a0000;
         public static final int textView10=0x7f0a0019;
-        public static final int textView11=0x7f0a002d;
+        public static final int textView11=0x7f0a002c;
         public static final int textView2=0x7f0a0002;
         public static final int textView3=0x7f0a0004;
         public static final int textView4=0x7f0a0006;
@@ -95,7 +94,7 @@ public final class R {
         public static final int textView7=0x7f0a000c;
         public static final int textView8=0x7f0a0016;
         public static final int textView9=0x7f0a0018;
-        public static final int timePicker1=0x7f0a002f;
+        public static final int timePicker1=0x7f0a002e;
         public static final int userName=0x7f0a0025;
         public static final int weight=0x7f0a0015;
     }

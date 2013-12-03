@@ -96,6 +96,7 @@ public class LoginActivity extends Activity {
         		UserInformation.userType = userInfo[5];
         		if(UserInformation.userType.equals("patient"))
         		{
+        			UserInformation.userName = userName;
         			Intent intent = new Intent(getApplicationContext(), 
         					UserInfoActivity.class);
             	    intent.putExtra(EXTRA_MESSAGE, userName);
