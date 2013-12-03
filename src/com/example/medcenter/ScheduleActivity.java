@@ -52,6 +52,15 @@ public class ScheduleActivity extends Activity {
 	    Toast.makeText(getApplicationContext(), "Your Appointment is on "+ UserInformation.appointmentDate,
 	            Toast.LENGTH_LONG).show();
 	  }
+  public void onBackPressed(){
+	  
+		  Intent intent = new Intent(getApplicationContext(), UserInfoActivity.class);
+		  intent.putExtra(EXTRA_MESSAGE, UserInformation.userName);
+		    startActivity(intent);
+		  startActivity(intent);
+	
+  }
+
   
 
   
