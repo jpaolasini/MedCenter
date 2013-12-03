@@ -71,7 +71,7 @@
         android:maxLines = "1"
         android:lines = "1">
 
-        <requestFocus />
+        
     </EditText>
 
     <TextView
@@ -91,9 +91,10 @@
         android:layout_alignLeft="@+id/password"
         android:ems="10" 
         android:singleLine = "true"
-
-android:maxLines = "1"
-
-android:lines = "1"/>
+		android:maxLines = "1"
+		android:lines = "1">
+		
+		<requestFocus />
+   </EditText>
 
 </RelativeLayout>

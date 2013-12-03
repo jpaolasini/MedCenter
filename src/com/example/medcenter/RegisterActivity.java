@@ -3,7 +3,11 @@ package com.example.medcenter;
 import java.io.File;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.app.AlertDialog.Builder;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
@@ -15,7 +19,43 @@ import android.widget.Toast;
 
 public class RegisterActivity extends Activity {
   public final static String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
+  private static final int DIALOG_ALERT = 10;
 
+  public void onBackPressed(){
+	  showDialog(DIALOG_ALERT);
+  }
+
+  @Override
+  protected Dialog onCreateDialog(int id) {
+    switch (id) {
+    case DIALOG_ALERT:
+      // create out AlterDialog
+      Builder builder = new AlertDialog.Builder(this);
+      builder.setMessage("Cancel Registration?");
+      builder.setCancelable(true);
+      builder.setPositiveButton("Yes", new OkOnClickListener());
+      builder.setNegativeButton("No", new CancelOnClickListener());
+      AlertDialog dialog = builder.create();
+      dialog.show();
+    }
+    return super.onCreateDialog(id);
+  }
+
+  private final class CancelOnClickListener implements
+      DialogInterface.OnClickListener {
+    public void onClick(DialogInterface dialog, int which) {
+
+    }
+  }
+
+  private final class OkOnClickListener implements
+      DialogInterface.OnClickListener {
+    public void onClick(DialogInterface dialog, int which) {
+        Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+        startActivity(intent);
+    }
+  }
+  
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_register);
