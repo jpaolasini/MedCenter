@@ -49,7 +49,6 @@
         android:layout_height="wrap_content"
         android:text="hasDiabetes"
         android:textAppearance="?android:attr/textAppearanceLarge" />
-<<<<<<< HEAD
 
     <TextView
         android:id="@+id/patientPrescriptions"
@@ -57,7 +56,6 @@
         android:layout_height="wrap_content"
         android:text="Prescriptions"
         android:textAppearance="?android:attr/textAppearanceLarge" />
-=======
     
     <TextView
         android:id="@+id/nextAppointment"
@@ -66,6 +64,4 @@
         android:text="nextAppointment"
         android:textAppearance="?android:attr/textAppearanceLarge" />
    
->>>>>>> b090e8b46c9e4a477f9a4cea275234ccb9befeea
-    
 </LinearLayout>
