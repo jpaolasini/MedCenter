@@ -1,9 +1,4 @@
 
-November 15 ,2013
-
-
-
-
 Mobile Medical Information
 System Application
 
@@ -71,7 +66,6 @@ EXIT - if you would like to close the app.
 From the  LOGIN page you are prompted to enter your USERNAME and PASSWORD in their respective fields, and then select LOGIN. If your information is correct you will be redirected to YOUR HOME PAGE, if authentification fails, you either need to REGISTER or check to make sure you entered your username and password correctly.
 
 Register
-
 Your Home Page
 Logout
 Schedule
