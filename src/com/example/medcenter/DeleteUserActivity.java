@@ -18,6 +18,7 @@ public class DeleteUserActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_delete_user);
+		setTitle("Delete a User");
 	}
 
 	@Override

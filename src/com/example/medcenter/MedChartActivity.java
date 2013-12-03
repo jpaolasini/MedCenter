@@ -16,6 +16,7 @@ public class MedChartActivity extends Activity {
     setContentView(R.layout.activity_medchart);
     Intent intent = getIntent();
     String patientUserName = intent.getStringExtra(DocNurseHomeActivity.EXTRA_MESSAGE);
+    setTitle("Patient Medical Chart");
 
     
     

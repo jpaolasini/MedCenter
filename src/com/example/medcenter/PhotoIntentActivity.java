@@ -222,6 +222,7 @@ public class PhotoIntentActivity extends Activity {
 		} else {
 			mAlbumStorageDirFactory = new BaseAlbumDirFactory();
 		}
+		setTitle("Take a Photo");
 	}
 
 	@Override

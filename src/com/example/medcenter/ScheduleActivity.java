@@ -16,7 +16,7 @@ public class ScheduleActivity extends Activity {
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_schedule);
-    
+    setTitle("Schedule");
     
     // String message = intent.getStringExtra(LoginActivity.EXTRA_MESSAGE);
     // EditText editText = (EditText) findViewById(R.id.textView1);

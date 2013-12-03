@@ -62,6 +62,7 @@ public class RegisterActivity extends Activity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_register);
     Intent intent = getIntent();
+    setTitle("Register a New User");
   }
 
   /*

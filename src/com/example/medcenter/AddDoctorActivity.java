@@ -26,6 +26,7 @@ public class AddDoctorActivity extends Activity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_adddoctor);
     Intent intent = getIntent();
+    setTitle("Add a New Staff Member");
   }
 
   public void LogOut(View view) {

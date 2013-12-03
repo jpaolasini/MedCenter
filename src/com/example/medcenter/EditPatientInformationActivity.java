@@ -18,6 +18,7 @@ public class EditPatientInformationActivity extends Activity {
 	    super.onCreate(savedInstanceState);
 	    setContentView(R.layout.activity_editpatientinfo);
 	    Intent intent = getIntent();
+	    setTitle("Edit Patient Information");
 	}
 	
 	public void confirmChange(View view)

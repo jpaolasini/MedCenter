@@ -128,6 +128,6 @@ for(int i = 0; i<weightArray.length; i++)
 	}
 	
 
-  
+	setTitle("Patient Graph");
 }
 }

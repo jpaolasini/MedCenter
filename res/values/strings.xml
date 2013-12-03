@@ -32,16 +32,16 @@
         <item>Female</item>
     </string-array>
     <string-array name="hasDiabetes">
-        <item>Yes</item>
         <item>No</item>
+        <item>Yes</item>
     </string-array>
     <string-array name="hasHernia">
-        <item>Yes</item>
         <item>No</item>
+        <item>Yes</item>
     </string-array>
     <string-array name="hasBloodInUrine">
-        <item>Yes</item>
         <item>No</item>
+        <item>Yes</item>
     </string-array>
 
     <string name="title_activity_prescription_manager">PrescriptionManager</string>

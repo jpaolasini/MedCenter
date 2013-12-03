@@ -34,6 +34,7 @@ public class UserInfoActivity extends Activity {
     String patientUserName = "";
     boolean tetanus = false;
     boolean fluShot = false;
+    setTitle("Patient Information");
     
     if(UserInformation.userType.equals("Doctor"))
     {
