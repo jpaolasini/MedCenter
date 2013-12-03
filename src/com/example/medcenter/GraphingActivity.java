@@ -9,12 +9,6 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
 import android.view.WindowManager;
-<<<<<<< HEAD
-=======
-
-import android.widget.TextView;
-
->>>>>>> 47cc35b0e5b8e9ed78da03558635d4fb07748b9a
 
 import com.androidplot.xy.LineAndPointFormatter;
 import com.androidplot.xy.PointLabelFormatter;
@@ -37,17 +31,11 @@ public class GraphingActivity extends Activity {
     String directoryPath = Environment.getExternalStoragePublicDirectory(
         Environment.DIRECTORY_DOWNLOADS).toString()
         + "/";
-    
-<<<<<<< HEAD
 
 
-    String fileName = UserInformation.userName+ ".txt";
-
-
-=======
 
     String fileName = UserInformation.userName+ ".txt";
->>>>>>> 47cc35b0e5b8e9ed78da03558635d4fb07748b9a
+
     
     //Read existing user data from file.
     String data;
@@ -82,7 +70,7 @@ String[] age = weightString.split(":");
 Integer[] ageArray = new Integer[age.length];
 Integer[] weightArray = new Integer[weight.length];
 
-<<<<<<< HEAD
+
 for(int i = 0; i < ageArray.length; i++){
 	ageArray[i] = Integer.parseInt(age[i]);
 }
@@ -90,8 +78,7 @@ for(int i = 0; i<weightArray.length; i++)
 {
 	weightArray[i] = Integer.parseInt(weight[i]);
 }
-=======
->>>>>>> 47cc35b0e5b8e9ed78da03558635d4fb07748b9a
+
 
 	    // initialize our XYPlot reference:
 	    plot = (XYPlot) findViewById(R.id.mySimpleXYPlot);
