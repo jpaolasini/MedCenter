@@ -5,17 +5,59 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.app.AlertDialog.Builder;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
 public class RegisterActivity extends Activity {
   public final static String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
+  private static final int DIALOG_ALERT = 10;
 
+  public void onBackPressed(){
+	  showDialog(DIALOG_ALERT);
+  }
+
+  @Override
+  protected Dialog onCreateDialog(int id) {
+    switch (id) {
+    case DIALOG_ALERT:
+      // create out AlterDialog
+      Builder builder = new AlertDialog.Builder(this);
+      builder.setMessage("Cancel registration?");
+      builder.setCancelable(true);
+      builder.setPositiveButton("Yes", new OkOnClickListener());
+      builder.setNegativeButton("No", new CancelOnClickListener());
+      AlertDialog dialog = builder.create();
+      dialog.show();
+    }
+    return super.onCreateDialog(id);
+  }
+
+  private final class CancelOnClickListener implements
+      DialogInterface.OnClickListener {
+    public void onClick(DialogInterface dialog, int which) {
+
+    }
+  }
+
+  private final class OkOnClickListener implements
+      DialogInterface.OnClickListener {
+    public void onClick(DialogInterface dialog, int which) {
+        Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+        startActivity(intent);
+    }
+  }
+  
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_register);
@@ -49,7 +91,14 @@ public class RegisterActivity extends Activity {
     if (firstName.getText().toString().matches(".*\\d.*")
         || lastName.getText().toString().matches(".*\\d.*")
         || bloodType.getSelectedItem().toString().matches(".*\\d.*")) {
-      userName.setText("Incorrect Parameters");
+      //userName.setText("Incorrect Parameters");
+    	
+      //show a toast message when there are incorrect values and hide keyboard 
+      Toast.makeText(getApplicationContext(), "You have incorrect values!",Toast.LENGTH_LONG).show();
+      InputMethodManager inputManager = (InputMethodManager)            
+			  this.getSystemService(Context.INPUT_METHOD_SERVICE); 
+			    inputManager.hideSoftInputFromWindow(this.getCurrentFocus().getWindowToken(),      
+			    InputMethodManager.HIDE_NOT_ALWAYS);
     } else {
 
       try {
@@ -90,10 +139,22 @@ public class RegisterActivity extends Activity {
           
         } else if (file.exists() == true) {
           // EditText failed = (EditText) findViewById(R.id.textView10);
-          userName.setText("Username Taken!");
+          //userName.setText("Username Taken!");
+          //show a toast message when there are incorrect values and hide keyboard 
+          Toast.makeText(getApplicationContext(), "This username is already taken",Toast.LENGTH_LONG).show();
+          InputMethodManager inputManager = (InputMethodManager)            
+    			  this.getSystemService(Context.INPUT_METHOD_SERVICE); 
+    			    inputManager.hideSoftInputFromWindow(this.getCurrentFocus().getWindowToken(),      
+    			    InputMethodManager.HIDE_NOT_ALWAYS);
         }
       } catch (Exception e) {
-        userName.setHint("Incorrect Parameters");
+       // userName.setHint("Incorrect Parameters");
+      //show a toast message when there are incorrect values and hide keyboard 
+        Toast.makeText(getApplicationContext(), "You have incorrect values!",Toast.LENGTH_LONG).show();
+        InputMethodManager inputManager = (InputMethodManager)            
+  			  this.getSystemService(Context.INPUT_METHOD_SERVICE); 
+  			    inputManager.hideSoftInputFromWindow(this.getCurrentFocus().getWindowToken(),      
+  			    InputMethodManager.HIDE_NOT_ALWAYS);
       }
     }
   }

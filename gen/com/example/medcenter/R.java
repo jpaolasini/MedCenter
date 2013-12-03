@@ -36,23 +36,27 @@ public final class R {
         public static final int title_font_size=0x7f050003;
     }
     public static final class drawable {
-        public static final int ic_launcher=0x7f020000;
-        public static final int medcenter=0x7f020001;
+        public static final int background=0x7f020000;
+        public static final int calendar_week=0x7f020001;
+        public static final int ic_launcher=0x7f020002;
+        public static final int medcenter=0x7f020003;
+        public static final int typeb_calendar_today=0x7f020004;
     }
     public static final class id {
-        public static final int action_settings=0x7f0a0031;
+        public static final int action_settings=0x7f0a0033;
         public static final int age=0x7f0a0017;
         public static final int btnIntend=0x7f0a0029;
         public static final int btnIntendS=0x7f0a002a;
         public static final int button1=0x7f0a000f;
         public static final int button2=0x7f0a000e;
-        public static final int button3=0x7f0a002c;
-        public static final int button4=0x7f0a002e;
-        public static final int button5=0x7f0a002d;
+        public static final int button3=0x7f0a002e;
+        public static final int button4=0x7f0a0030;
+        public static final int button5=0x7f0a002f;
+        public static final int calendarView1=0x7f0a002c;
         public static final int datePicker1=0x7f0a001a;
         public static final int datePicker2=0x7f0a001b;
-        public static final int editInfoButton=0x7f0a002f;
-        public static final int editMedicalHistoryButton=0x7f0a0030;
+        public static final int editInfoButton=0x7f0a0031;
+        public static final int editMedicalHistoryButton=0x7f0a0032;
         public static final int editText1=0x7f0a0001;
         public static final int editText2=0x7f0a0003;
         public static final int editText3=0x7f0a0005;
@@ -88,6 +92,7 @@ public final class R {
         public static final int textView7=0x7f0a000c;
         public static final int textView8=0x7f0a0016;
         public static final int textView9=0x7f0a0018;
+        public static final int timePicker1=0x7f0a002d;
         public static final int userName=0x7f0a0023;
         public static final int weight=0x7f0a0015;
     }
@@ -103,7 +108,7 @@ public final class R {
         public static final int activity_pictures=0x7f030008;
         public static final int activity_register=0x7f030009;
         public static final int activity_schedule=0x7f03000a;
-        public static final int activity_userinfo=0x7f03000b;
+        public static final int activity_userinf=0x7f03000b;
     }
     public static final class menu {
         public static final int graphing=0x7f090000;
