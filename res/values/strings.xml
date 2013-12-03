@@ -45,5 +45,7 @@
     </string-array>
 
     <string name="title_activity_prescription_manager">PrescriptionManager</string>
+    <string name="title_activity_admin_home">AdminHomeActivity</string>
+    <string name="title_activity_delete_user">DeleteUserActivity</string>
 
 </resources>

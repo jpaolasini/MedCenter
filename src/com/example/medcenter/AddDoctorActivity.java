@@ -131,7 +131,7 @@ public class AddDoctorActivity extends Activity {
     case DIALOG_ALERT:
       // create out AlterDialog
       Builder builder = new AlertDialog.Builder(this);
-      builder.setMessage("Do you want to log out?");
+      builder.setMessage("Stop adding a doctor?");
       builder.setCancelable(true);
       builder.setPositiveButton("Yes", new OkOnClickListener());
       builder.setNegativeButton("No", new CancelOnClickListener());
@@ -144,17 +144,15 @@ public class AddDoctorActivity extends Activity {
   private final class CancelOnClickListener implements
       DialogInterface.OnClickListener {
     public void onClick(DialogInterface dialog, int which) {
-      Toast.makeText(getApplicationContext(), "Activity will continue",
-          Toast.LENGTH_LONG).show();
+      
     }
   }
 
   private final class OkOnClickListener implements
       DialogInterface.OnClickListener {
     public void onClick(DialogInterface dialog, int which) {
-      Toast.makeText(getApplicationContext(), "You have been logged out",
-          Toast.LENGTH_LONG).show();
-      Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+      
+      Intent intent = new Intent(getApplicationContext(), AdminHomeActivity.class);
       startActivity(intent);
     }
   }

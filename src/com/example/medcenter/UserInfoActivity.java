@@ -35,6 +35,9 @@ public class UserInfoActivity extends Activity {
       	//Turn on the edit info button if a doctor/nurse is viewing this page.	
       	Button editMed = (Button) findViewById(R.id.editMedicalHistoryButton);      		
       	editMed.setVisibility(View.VISIBLE);
+      	
+      	Button prescriptionManagerBtn = (Button) findViewById(R.id.PrescriptionMan);
+      	prescriptionManagerBtn.setVisibility(View.VISIBLE);
     }
     else if(UserInformation.userType.equals("Nurse"))
     {
@@ -46,6 +49,9 @@ public class UserInfoActivity extends Activity {
       	//Turn on the edit info button if a doctor/nurse is viewing this page.	
       	Button editMed = (Button) findViewById(R.id.editMedicalHistoryButton);      		
       	editMed.setVisibility(View.GONE);
+      	
+      	Button prescriptionManagerBtn = (Button) findViewById(R.id.PrescriptionMan);
+      	prescriptionManagerBtn.setVisibility(View.GONE);
     	
     }
     else if(UserInformation.userType.equals("patient"))
@@ -58,6 +64,9 @@ public class UserInfoActivity extends Activity {
       	
       	Button editMed = (Button) findViewById(R.id.editMedicalHistoryButton);      		
       	editMed.setVisibility(View.GONE);
+      	
+      	Button prescriptionManagerBtn = (Button) findViewById(R.id.PrescriptionMan);
+      	prescriptionManagerBtn.setVisibility(View.GONE);
     }
     else
     {
@@ -65,6 +74,12 @@ public class UserInfoActivity extends Activity {
     	//Turn on the edit info button if a doctor/nurse is viewing this page.	
       	Button editInfo = (Button) findViewById(R.id.editInfoButton);      		
       	editInfo.setVisibility(View.VISIBLE);
+      	
+      	Button editMed = (Button) findViewById(R.id.editMedicalHistoryButton);      		
+      	editMed.setVisibility(View.GONE);
+      	
+      	Button prescriptionManagerBtn = (Button) findViewById(R.id.PrescriptionMan);
+      	prescriptionManagerBtn.setVisibility(View.GONE);
     }
     
     UserInformation.userName = patientUserName;
