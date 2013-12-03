@@ -9,7 +9,8 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class MedChartActivity extends Activity {
-
+	public final static String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
+	
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_medchart);
@@ -39,7 +40,7 @@ public class MedChartActivity extends Activity {
 		
     TextView lastTetnus = new TextView(this);
     lastTetnus = (TextView) findViewById(R.id.lastTetnus);
-    lastTetnus.setText("Last Tetnus: "+patientInfo[10]);
+    lastTetnus.setText("Last Tetanus: "+patientInfo[10]);
     
     TextView lastFlu = new TextView(this);
     lastFlu = (TextView) findViewById(R.id.lastFlu);
@@ -66,4 +67,10 @@ public class MedChartActivity extends Activity {
 	}    
     
   }
+  /*public void onBackPressed(){
+		Intent intent = new Intent(getApplicationContext(), 
+				UserInfoActivity.class);
+	    intent.putExtra(EXTRA_MESSAGE, patientUserName.getText().toString());
+	    startActivity(intent);
+	}*/
 }
