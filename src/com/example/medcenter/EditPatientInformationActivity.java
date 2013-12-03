@@ -27,8 +27,8 @@ public class EditPatientInformationActivity extends Activity {
 	    String lastName = ((EditText) findViewById(R.id.lastName)).getText().toString();
 	    String newWeight = ((EditText) findViewById(R.id.weight)).getText().toString();
 	    String newAge = ((EditText) findViewById(R.id.age)).getText().toString();
+	    String height = ((EditText) findViewById(R.id.height)).getText().toString();
 	    String gender = ((Spinner) findViewById(R.id.spinner2)).getSelectedItem().toString();
-	    String age = ((EditText) findViewById(R.id.age)).getText().toString();
 	    String bloodType = ((Spinner) findViewById(R.id.spinner1)).getSelectedItem().toString();
 	    
 	    if (firstName.matches(".*\\d.*")
@@ -63,7 +63,7 @@ public class EditPatientInformationActivity extends Activity {
 	 		    prescriptionString = prescriptionString.replace("]", "");
 	 		    prescriptions = prescriptionString.split(":");
 	 		    
-	 		    String height = patientInfo[6];
+	 		    String age = patientInfo[6];
 	 		    String weight = patientInfo[7];
 	 		    
 	 		    //Get array of weight

@@ -1,16 +1,14 @@
 package com.example.medcenter;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.Dialog;
 import android.app.AlertDialog.Builder;
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -102,6 +100,7 @@ public class UserInfoActivity extends Activity {
 	    TextView patientName = new TextView(this);
 		patientName = (TextView) findViewById(R.id.errorMessage);
 		patientName.setText(patientInfo[2] + " " + patientInfo[3]);	
+
 		
 		TextView ageText = new TextView(this);
 		ageText = (TextView) findViewById(R.id.textView2);

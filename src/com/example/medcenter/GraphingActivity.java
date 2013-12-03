@@ -9,6 +9,10 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
 import android.view.WindowManager;
+<<<<<<< HEAD
+import android.widget.TextView;
+=======
+>>>>>>> 898eee61761e56c0f280cb150f8923f9a817bd83
 
 import com.androidplot.xy.LineAndPointFormatter;
 import com.androidplot.xy.PointLabelFormatter;
@@ -32,7 +36,14 @@ public class GraphingActivity extends Activity {
         Environment.DIRECTORY_DOWNLOADS).toString()
         + "/";
     
+<<<<<<< HEAD
     String fileName = UserInformation.userName+ ".txt";
+=======
+    String fileName = UserInformation.userName + ".txt";
+    TextView t = new TextView(this);
+    t = (TextView) findViewById(R.id.test);
+    t.setText(UserInformation.userName);
+>>>>>>> abbf920fafaac5d195f4b7bb3c61606cd9b197d7
     
     //Read existing user data from file.
     String data;
