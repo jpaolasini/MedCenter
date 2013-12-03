@@ -31,7 +31,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10" 
-        android:text = "Matt">
+        android:text = "Matt"
+        android:singleLine = "true"
+        android:maxLines = "1"
+        android:lines = "1">
         <requestFocus />
     </EditText>
 
@@ -48,7 +51,10 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPassword"
-         android:text = "Matt" />
+         android:text = "Matt" 
+              android:singleLine = "true"
+        android:maxLines = "1"
+        android:lines = "1"/>/>
 
     <TextView
         android:id="@+id/textView4"
@@ -62,7 +68,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10" 
-         android:text = "Matt"/>
+         android:text = "Matt"
+              android:singleLine = "true"
+        android:maxLines = "1"
+        android:lines = "1"/>/>
 
     <TextView
         android:id="@+id/textView5"
@@ -76,7 +85,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10" 
-        android:text = "Matt"/>
+        android:text = "Matt"
+             android:singleLine = "true"
+        android:maxLines = "1"
+        android:lines = "1"/>/>
 
     <TextView
         android:id="@+id/textView11"
@@ -103,7 +115,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10" 
-        android:text = "154"/>
+        android:text = "154"
+             android:singleLine = "true"
+        android:maxLines = "1"
+        android:lines = "1"/>
 
     <TextView
         android:id="@+id/textView7"
@@ -117,7 +132,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10" 
-        android:text = "154"/>
+        android:text = "154"
+             android:singleLine = "true"
+        android:maxLines = "1"
+        android:lines = "1"/>
 
     <TextView
         android:id="@+id/textView8"
@@ -131,7 +149,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10" 
-        android:text = "154"/>
+        android:text = "154"
+             android:singleLine = "true"
+        android:maxLines = "1"
+        android:lines = "1"/>
 
     <TextView
         android:id="@+id/textView9"
