@@ -25,7 +25,7 @@ import com.androidplot.xy.XYSeries;
 public class GraphingActivity extends Activity {
 
   private XYPlot plot;
-  String patientUserName = "";
+
   @Override
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -53,7 +53,6 @@ public class GraphingActivity extends Activity {
 	        WindowManager.LayoutParams.FLAG_SECURE);
 
 	    setContentView(R.layout.activity_graphing);
-	    UserInformation.userName = patientUserName;
 	    // Get the directory path to the download folder and create an app
 	    // folder there.
 	  
@@ -73,9 +72,8 @@ String[] weight = weightString.split(":");
 String[] age = weightString.split(":");
 
 Integer[] ageArray = new Integer[age.length];
-ageArray[age.length] = 10;
 Integer[] weightArray = new Integer[weight.length];
-weightArray[age.length] = 10;
+
 
 	    // initialize our XYPlot reference:
 	    plot = (XYPlot) findViewById(R.id.mySimpleXYPlot);
@@ -84,7 +82,7 @@ weightArray[age.length] = 10;
 	    Integer[] xVals = ageArray;
 	    Integer[] yVals = weightArray;
 	    
-	    Log.i("test",ageArray.toString());
+	    Log.i("test",yVals.toString());
 	    
 	   
 

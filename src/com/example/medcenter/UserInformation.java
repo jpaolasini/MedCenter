@@ -94,12 +94,20 @@ public class UserInformation {
 	String weightString = "";
 	String ageString = "";
 	for(int i = 0; i < weight.size(); i++)
-	{
-		weightString = weightString + weight.get(i) + ":";
-	}for(int i = 0; i < age.size(); i++)
-	{
-		ageString = ageString + age.get(i) + ":";
+	{if(i==0){
+		weightString = weightString+weight.get(i);
 	}
+	else{
+		weightString = weightString + ":"+weight.get(i) ;
+	}
+	}for(int i = 0; i < age.size(); i++)
+	{if(i==0){
+		ageString = ageString + age.get(i);}
+	else{
+		ageString = ageString + ":"+age.get(i);
+	}
+	}
+	
 	for(int i = 0; i < prescriptions.length; i++)
 	{
 		prescriptionString = prescriptionString + prescriptions[i] + ":";
