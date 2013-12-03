@@ -24,7 +24,7 @@
         androidPlot.legendWidget.iconSizeMetrics.widthMetric.value="15dp"
         androidPlot.legendWidget.positionMetrics.anchor="right_bottom"
         androidPlot.legendWidget.textPaint.textSize="@dimen/legend_text_font_size"
-        androidPlot.rangeLabel="Weight"
+        androidPlot.rangeLabel=""
         androidPlot.rangeLabelWidget.labelPaint.textSize="@dimen/range_label_font_size"
         androidPlot.title="Patient Weight"
         androidPlot.titleWidget.labelPaint.textSize="@dimen/title_font_size" />
