@@ -28,6 +28,10 @@ import com.androidplot.xy.XYSeries;
 public class GraphingActivity extends Activity {
 
   private XYPlot plot;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4c30d8fb6e487c00c334edfe4b592481c01cbcc7
   @Override
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -79,8 +83,8 @@ String[] weight = weightString.split(":");
 String[] age = ageString.split(":");
 
 Integer[] ageArray = new Integer[age.length];
-ageArray[age.length] = 10;
 Integer[] weightArray = new Integer[weight.length];
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 for(int i = 0; i < ageArray.length; i++){
@@ -93,6 +97,9 @@ for(int i = 0; i<weightArray.length; i++)
 =======
 weightArray[age.length] = 10;
 >>>>>>> 116788722c04bb1a7f78378a857e44dfa2bf25c2
+=======
+
+>>>>>>> 4c30d8fb6e487c00c334edfe4b592481c01cbcc7
 
 	    // initialize our XYPlot reference:
 	    plot = (XYPlot) findViewById(R.id.mySimpleXYPlot);
@@ -101,7 +108,7 @@ weightArray[age.length] = 10;
 	    Integer[] xVals = ageArray;
 	    Integer[] yVals = weightArray;
 	    
-	    Log.i("test",ageArray.toString());
+	    Log.i("test",yVals.toString());
 	    
 	   
 
