@@ -10,13 +10,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Patient Name"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="25sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/lastTetnus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="lastTetnus"
+        android:text="lastTetanus"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
@@ -47,7 +49,23 @@
         android:layout_height="wrap_content"
         android:text="hasDiabetes"
         android:textAppearance="?android:attr/textAppearanceLarge" />
+<<<<<<< HEAD
+
+    <TextView
+        android:id="@+id/patientPrescriptions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Prescriptions"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+=======
     
+    <TextView
+        android:id="@+id/nextAppointment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="nextAppointment"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
    
+>>>>>>> b090e8b46c9e4a477f9a4cea275234ccb9befeea
     
 </LinearLayout>

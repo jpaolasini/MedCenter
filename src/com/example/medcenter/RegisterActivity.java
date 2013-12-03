@@ -62,6 +62,7 @@ public class RegisterActivity extends Activity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_register);
     Intent intent = getIntent();
+    setTitle("Register a New User");
   }
 
   /*
@@ -86,7 +87,7 @@ public class RegisterActivity extends Activity {
     Spinner bloodType = (Spinner) findViewById(R.id.spinner1);
     String patientType = "patient";
     String fileName = userName.getText().toString() + ".txt";
-    String[] prescriptions = {};
+    List<String> prescriptions = new ArrayList<String>();
     
     if (userName.getText().toString().equals("")
             || userName.getText().toString().equals("Username Taken!")

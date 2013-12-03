@@ -2,12 +2,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/blu"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".PrescriptionManager"
-    android:background="@drawable/blu" >
+    tools:context=".PrescriptionManager" >
 
     <TextView
         android:id="@+id/textView1"
@@ -18,23 +18,40 @@
         android:text="Current Prescriptions"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
+    <Spinner
+        android:id="@+id/presSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_below="@+id/textView1" />
+
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView1"
-        android:layout_below="@+id/button1"
-        android:layout_marginTop="72dp"
+        android:layout_alignLeft="@+id/presSpinner"
+        android:layout_centerVertical="true"
         android:text="Add Prescription"
         android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android:id="@+id/prescriptionsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_below="@+id/textView2"
+        android:ems="10" >
+
+        <requestFocus />
+    </EditText>
 
     <Button
         android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/textView1"
-        android:layout_marginBottom="84dp"
+        android:layout_alignLeft="@+id/prescriptionsText"
+        android:layout_below="@+id/prescriptionsText"
+        android:onClick="addPres"
         android:text="Add Prescription" />
 
 </RelativeLayout>

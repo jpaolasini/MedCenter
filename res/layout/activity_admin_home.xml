@@ -11,7 +11,7 @@
 
     <Button
         android:id="@+id/AddDocNurseButton"
-        android:layout_width="wrap_content"
+        android:layout_width="228dp"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
@@ -21,7 +21,7 @@
 
     <Button
         android:id="@+id/DeleteUserButton"
-        android:layout_width="wrap_content"
+        android:layout_width="228dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/AddDocNurseButton"
         android:layout_centerHorizontal="true"

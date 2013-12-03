@@ -1,13 +1,21 @@
 package com.example.medcenter;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
 import android.app.Dialog;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.app.TaskStackBuilder;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
+import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -24,6 +32,9 @@ public class UserInfoActivity extends Activity {
     setContentView(R.layout.activity_userinf);
     Intent intent = getIntent();
     String patientUserName = "";
+    boolean tetanus = false;
+    boolean fluShot = false;
+    setTitle("Patient Information");
     
     if(UserInformation.userType.equals("Doctor"))
     {
@@ -56,7 +67,7 @@ public class UserInfoActivity extends Activity {
     }
     else if(UserInformation.userType.equals("patient"))
     {
-        patientUserName = UserInformation.userName;
+        patientUserName = intent.getStringExtra(HomeActivity.EXTRA_MESSAGE);
         
         //Turn off the edit info button if a patient is viewing this page.	
       	Button editInfo = (Button) findViewById(R.id.editInfoButton);      		
@@ -70,7 +81,7 @@ public class UserInfoActivity extends Activity {
     }
     else
     {
-    	patientUserName = UserInformation.userName;
+    	patientUserName = intent.getStringExtra(EditPatientInformationActivity.EXTRA_MESSAGE);
     	//Turn on the edit info button if a doctor/nurse is viewing this page.	
       	Button editInfo = (Button) findViewById(R.id.editInfoButton);      		
       	editInfo.setVisibility(View.VISIBLE);
@@ -135,9 +146,97 @@ public class UserInfoActivity extends Activity {
 		
 		TextView bloodType = new TextView(this);
 		bloodType = (TextView) findViewById(R.id.textView5);
-		bloodType.setText("BloodType: " + patientInfo[9]);			
+		bloodType.setText("BloodType: " + patientInfo[9]);
+		
+		
+		Calendar c = Calendar.getInstance();
+		System.out.println("Current time => " + c.getTime());
+
+		SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy");
+		String formattedDate = df.format(c.getTime());
+		  
+		String[] date1 = formattedDate.split("-");
+		String[] date2 = patientInfo[10].split("/");
+		String[] date3 = patientInfo[11].split("/");
+	
+		
+		if((Integer.parseInt(date1[2])-Integer.parseInt(date2[2]))>10){
+			tetanus = true;
+			   
+		}
+		
+		if((Integer.parseInt(date1[2])-Integer.parseInt(date3[2]))>1){
+			fluShot = true;
+		}
+		
     } catch (Exception e) {  		
 	}    
+    
+
+	
+	
+    if(tetanus){
+    	NotificationCompat.Builder mBuilder =
+    	        new NotificationCompat.Builder(this)
+    	        .setSmallIcon(R.drawable.ic_launcher)
+    	        .setContentTitle("MedCenter")
+    	        .setContentText("Come in for your Tetanus Vaccine!");
+    	// Creates an explicit intent for an Activity in your app
+    	Intent resultIntent = new Intent(this, ScheduleActivity.class);
+
+    	// The stack builder object will contain an artificial back stack for the
+    	// started Activity.
+    	// This ensures that navigating backward from the Activity leads out of
+    	// your application to the Home screen.
+    	TaskStackBuilder stackBuilder = TaskStackBuilder.create(this);
+    	// Adds the back stack for the Intent (but not the Intent itself)
+    	stackBuilder.addParentStack(ScheduleActivity.class);
+    	// Adds the Intent that starts the Activity to the top of the stack
+    	stackBuilder.addNextIntent(resultIntent);
+    	PendingIntent resultPendingIntent =
+    	        stackBuilder.getPendingIntent(
+    	            0,
+    	            PendingIntent.FLAG_UPDATE_CURRENT
+    	        );
+    	mBuilder.setContentIntent(resultPendingIntent);
+    	NotificationManager mNotificationManager =
+    	    (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+    	int mId = 0;
+		// mId allows you to update the notification later on.
+    	mNotificationManager.notify(mId , mBuilder.build());
+    }
+    
+
+    if(fluShot){
+    	NotificationCompat.Builder mBuilder =
+    	        new NotificationCompat.Builder(this)
+    	        .setSmallIcon(R.drawable.ic_launcher)
+    	        .setContentTitle("MedCenter")
+    	        .setContentText("Come in for your Flu Vaccine!");
+    	// Creates an explicit intent for an Activity in your app
+    	Intent resultIntent = new Intent(this, ScheduleActivity.class);
+
+    	// The stack builder object will contain an artificial back stack for the
+    	// started Activity.
+    	// This ensures that navigating backward from the Activity leads out of
+    	// your application to the Home screen.
+    	TaskStackBuilder stackBuilder = TaskStackBuilder.create(this);
+    	// Adds the back stack for the Intent (but not the Intent itself)
+    	stackBuilder.addParentStack(ScheduleActivity.class);
+    	// Adds the Intent that starts the Activity to the top of the stack
+    	stackBuilder.addNextIntent(resultIntent);
+    	PendingIntent resultPendingIntent =
+    	        stackBuilder.getPendingIntent(
+    	            0,
+    	            PendingIntent.FLAG_UPDATE_CURRENT
+    	        );
+    	mBuilder.setContentIntent(resultPendingIntent);
+    	NotificationManager mNotificationManager =
+    	    (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+    	int mId = 0;
+		// mId allows you to update the notification later on.
+    	mNotificationManager.notify(mId , mBuilder.build());
+    }
     
   }
   

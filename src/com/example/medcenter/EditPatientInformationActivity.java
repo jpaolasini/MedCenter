@@ -18,6 +18,7 @@ public class EditPatientInformationActivity extends Activity {
 	    super.onCreate(savedInstanceState);
 	    setContentView(R.layout.activity_editpatientinfo);
 	    Intent intent = getIntent();
+	    setTitle("Edit Patient Information");
 	}
 	
 	public void confirmChange(View view)
@@ -58,10 +59,14 @@ public class EditPatientInformationActivity extends Activity {
 	 		    
 	 		    //Retrieve individual prescriptions.
 	 		    String prescriptionString =  patientInfo[15];	 		    
-	 		    String[] prescriptions = new String[3];
+	 		    List<String> prescriptions = new ArrayList<String>();
 	 		    prescriptionString = prescriptionString.replace("[", "");
 	 		    prescriptionString = prescriptionString.replace("]", "");
-	 		    prescriptions = prescriptionString.split(":");
+	 		    String[] patientPrescriptions = prescriptionString.split(":");
+	 		    for(int i = 0; i < patientPrescriptions.length; i++)
+	 		    {
+	 		    	prescriptions.add(patientPrescriptions[i]);
+	 		    }
 	 		    
 	 		    String age = patientInfo[6];
 	 		    String weight = patientInfo[7];

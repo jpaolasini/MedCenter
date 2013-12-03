@@ -9,12 +9,14 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class MedChartActivity extends Activity {
-
+	public final static String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
+	
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_medchart);
     Intent intent = getIntent();
     String patientUserName = intent.getStringExtra(DocNurseHomeActivity.EXTRA_MESSAGE);
+    setTitle("Patient Medical Chart");
 
     
     
@@ -39,7 +41,7 @@ public class MedChartActivity extends Activity {
 		
     TextView lastTetnus = new TextView(this);
     lastTetnus = (TextView) findViewById(R.id.lastTetnus);
-    lastTetnus.setText("Last Tetnus: "+patientInfo[10]);
+    lastTetnus.setText("Last Tetanus: "+patientInfo[10]);
     
     TextView lastFlu = new TextView(this);
     lastFlu = (TextView) findViewById(R.id.lastFlu);
@@ -56,10 +58,44 @@ public class MedChartActivity extends Activity {
     TextView hasDiabetes = new TextView(this);
     hasDiabetes = (TextView) findViewById(R.id.hasDiabetes);
     hasDiabetes.setText("Diabetes: "+patientInfo[14]);   
+    
+    String prescriptions = patientInfo[15];
+    prescriptions = prescriptions.replace("[", "");
+    prescriptions = prescriptions.replace("]", "");
+    prescriptions = prescriptions.replace(":", "\n");
+    TextView userPrescriptions = new TextView(this);
+    userPrescriptions = (TextView) findViewById(R.id.patientPrescriptions);
+    userPrescriptions.setText("Prescriptions: " + prescriptions);
+
+    TextView nextAppointment = new TextView(this);
+    nextAppointment= (TextView) findViewById(R.id.nextAppointment);
+    nextAppointment.setText("Next Appointment: "+ UserInformation.appointmentDate);   
+
+    TextView nextAppointment = new TextView(this);
+    nextAppointment= (TextView) findViewById(R.id.nextAppointment);
+    nextAppointment.setText("Next Appointment: "+ UserInformation.appointmentDate);   
+
+    TextView nextAppointment = new TextView(this);
+    nextAppointment= (TextView) findViewById(R.id.nextAppointment);
+    nextAppointment.setText("Next Appointment: "+ UserInformation.appointmentDate);   
+
+    TextView nextAppointment = new TextView(this);
+    nextAppointment= (TextView) findViewById(R.id.nextAppointment);
+    nextAppointment.setText("Next Appointment: "+ UserInformation.appointmentDate);   
+
+    TextView nextAppointment = new TextView(this);
+    nextAppointment= (TextView) findViewById(R.id.nextAppointment);
+    nextAppointment.setText("Next Appointment: "+ UserInformation.appointmentDate);   
 
 		
     } catch (Exception e) {  		
 	}    
     
   }
+  /*public void onBackPressed(){
+		Intent intent = new Intent(getApplicationContext(), 
+				UserInfoActivity.class);
+	    intent.putExtra(EXTRA_MESSAGE, patientUserName.getText().toString());
+	    startActivity(intent);
+	}*/
 }

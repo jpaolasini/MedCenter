@@ -3,12 +3,32 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/blu" >
+	
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
 
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+      
+    <TextView
+        android:id="@+id/errorMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="100dp"
+        android:text="Patient Name"
+        android:textSize="25sp"
+        android:textStyle="bold"/>
+    
+    
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="25dp"
         android:layout_below="@+id/errorMessage"
         android:text="Age"
         android:textAppearance="?android:attr/textAppearanceLarge"
@@ -18,7 +38,7 @@
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="25dp"
         android:layout_below="@+id/textView2"
         android:text="Gender"
         android:textAppearance="?android:attr/textAppearanceLarge"
@@ -28,7 +48,7 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="25dp"
         android:layout_below="@+id/textView1"
         android:text="Weight"
         android:textAppearance="?android:attr/textAppearanceLarge"
@@ -38,7 +58,7 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="25dp"
         android:layout_below="@+id/textView3"
         android:text="Height"
         android:textAppearance="?android:attr/textAppearanceLarge"
@@ -48,7 +68,7 @@
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="25dp"
         android:layout_below="@+id/textView4"
         android:text="Blood Type"
         android:textAppearance="?android:attr/textAppearanceLarge"
@@ -59,7 +79,7 @@
         android:layout_width="228dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/button2"
-        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="50dp"
         android:onClick="goToMedChart"
         android:text="View Medical Chart"
         android:layout_marginTop="5dp" />
@@ -69,7 +89,7 @@
         android:layout_width="228dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/button3"
-        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="50dp"
         android:onClick="goToGraphing"
         android:text="Patient Graph"
         android:layout_marginTop="5dp" />
@@ -79,7 +99,7 @@
         android:layout_width="228dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/button5"
-        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="50dp"
         android:onClick="goToSchedule"
         android:text="View Schedule"
         android:layout_marginTop="5dp" />
@@ -89,7 +109,7 @@
         android:layout_width="228dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/button4"
-        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="50dp"
         android:layout_marginTop="5dp"
         android:onClick="goToEditPatientInfo"
         android:text="Edit Patient Information" />
@@ -99,20 +119,23 @@
         android:layout_width="228dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/editInfoButton"
-        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="50dp"
         android:onClick="goToEditPatientMedicalHistory"
         android:text="Edit Medical History"
         android:layout_marginTop="5dp" />
 
-    <TextView
-        android:id="@+id/errorMessage"
-        android:layout_width="wrap_content"
+    
+
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="228dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:text="Patient Name"
-        android:textStyle="bold"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:layout_below="@+id/textView5"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="50dp"
+        android:onClick="goToPictures"
+        android:text="Take Pictures" />
     
     <Button
         android:id="@+id/PrescriptionMan"
@@ -120,17 +143,12 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/editMedicalHistoryButton"
         android:layout_marginTop="5dp"
-        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="50dp"
         android:onClick="goToPrescriptionMan"
         android:text="Prescription Manager" />
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="228dp"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/button3"
-        android:layout_below="@+id/textView5"
-        android:onClick="goToPictures"
-        android:text="Take Pictures" />
+
+        </RelativeLayout>
+    </ScrollView>
 
 </RelativeLayout>

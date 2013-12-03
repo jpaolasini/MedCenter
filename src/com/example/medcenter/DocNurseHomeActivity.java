@@ -30,6 +30,7 @@ public class DocNurseHomeActivity extends Activity{
 	    super.onCreate(savedInstanceState);
 	    setContentView(R.layout.activity_docnursehome);
 	    Intent intent = getIntent();
+	    setTitle("Find a Patient");
 	  }
 	
 	/**

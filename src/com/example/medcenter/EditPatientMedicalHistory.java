@@ -40,7 +40,7 @@ public class EditPatientMedicalHistory extends Activity{
 		    String hasHernia = ((Spinner) findViewById(R.id.spinner2)).getSelectedItem().toString();
 		    String hasBloodInUrine = ((Spinner) findViewById(R.id.spinner3)).getSelectedItem().toString();
 		    String hasDiabetes = ((Spinner) findViewById(R.id.spinner4)).getSelectedItem().toString();
-		    String[] prescriptions = {"none","some","maybe"};
+		    List<String> prescriptions = new ArrayList<String>();
 		    
 		          try {
 		            // Get the directory path to the download folder and create an app

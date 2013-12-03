@@ -21,6 +21,7 @@ public class AdminHomeActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_admin_home);
+		setTitle("Welcome, Admin");
 	}
 
 	@Override

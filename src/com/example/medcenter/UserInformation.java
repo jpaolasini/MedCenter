@@ -20,6 +20,7 @@ public class UserInformation {
   static String hasDiabetes;
   static String isPregnant;
   static String[] prescriptions;
+  static String appointmentDate;
   
 
   public String getUserName() {
@@ -86,7 +87,7 @@ public class UserInformation {
   public static String mergePatientInfo(String username, String password,
     String firstName, String lastName, String gender, String userType, String height,
     List<Integer> weight, List<Integer> age, String bloodType, String lastTetnus,String lastFlu,
-		String hasHernia, String hasBloodInUrine, String hasDiabetes, String[] prescriptions) throws Exception {
+		String hasHernia, String hasBloodInUrine, String hasDiabetes,List<String> prescriptions) throws Exception {
 	
 	//Set up string[] to a string.
 	String parser = ",";
@@ -108,9 +109,15 @@ public class UserInformation {
 	}
 	}
 	
-	for(int i = 0; i < prescriptions.length; i++)
+	for(int i = 0; i < prescriptions.size(); i++)
 	{
-		prescriptionString = prescriptionString + prescriptions[i] + ":";
+		if(i == 0){
+			prescriptionString = prescriptionString + prescriptions.get(i);
+		}
+		else
+		{
+			prescriptionString = prescriptionString + ":" + prescriptions.get(i);
+		}
 	}
 
     String mergedData = username + parser + password + parser + firstName
