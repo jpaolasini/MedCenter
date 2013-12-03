@@ -9,6 +9,12 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
 import android.view.WindowManager;
+<<<<<<< HEAD
+=======
+
+import android.widget.TextView;
+
+>>>>>>> 116788722c04bb1a7f78378a857e44dfa2bf25c2
 
 import com.androidplot.xy.LineAndPointFormatter;
 import com.androidplot.xy.PointLabelFormatter;
@@ -31,8 +37,16 @@ public class GraphingActivity extends Activity {
         Environment.DIRECTORY_DOWNLOADS).toString()
         + "/";
     
+<<<<<<< HEAD
     String fileName = UserInformation.userName + ".txt";
     Log.d("FILENAME", fileName);
+=======
+
+    String fileName = UserInformation.userName+ ".txt";
+    TextView t = new TextView(this);
+    t = (TextView) findViewById(R.id.test);
+    t.setText(UserInformation.userName);
+>>>>>>> 116788722c04bb1a7f78378a857e44dfa2bf25c2
     
     //Read existing user data from file.
     String data;
@@ -65,7 +79,9 @@ String[] weight = weightString.split(":");
 String[] age = ageString.split(":");
 
 Integer[] ageArray = new Integer[age.length];
+ageArray[age.length] = 10;
 Integer[] weightArray = new Integer[weight.length];
+<<<<<<< HEAD
 
 for(int i = 0; i < ageArray.length; i++){
 	ageArray[i] = Integer.parseInt(age[i]);
@@ -74,6 +90,9 @@ for(int i = 0; i<weightArray.length; i++)
 {
 	weightArray[i] = Integer.parseInt(weight[i]);
 }
+=======
+weightArray[age.length] = 10;
+>>>>>>> 116788722c04bb1a7f78378a857e44dfa2bf25c2
 
 	    // initialize our XYPlot reference:
 	    plot = (XYPlot) findViewById(R.id.mySimpleXYPlot);
@@ -81,6 +100,10 @@ for(int i = 0; i<weightArray.length; i++)
 	    // Create a couple arrays of y-values to plot:
 	    Integer[] xVals = ageArray;
 	    Integer[] yVals = weightArray;
+	    
+	    Log.i("test",ageArray.toString());
+	    
+	   
 
 	    Log.d("xVals", String.valueOf(xVals));
 	    Log.d("yVals", String.valueOf(yVals));

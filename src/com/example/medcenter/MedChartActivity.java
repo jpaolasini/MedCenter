@@ -15,18 +15,8 @@ public class MedChartActivity extends Activity {
     setContentView(R.layout.activity_medchart);
     Intent intent = getIntent();
     String patientUserName = intent.getStringExtra(DocNurseHomeActivity.EXTRA_MESSAGE);
-    if(UserInformation.userType.equals("Doctor") || UserInformation.userType.equals("Nurse"))
-    {
-      	//Button editInfo = (Button) findViewById(R.id.editInfoButton);      		
-      	//editInfo.setVisibility(View.VISIBLE);
-    }
+
     
-    else if(UserInformation.userType.equals("patient"))
-    {
-        //Turn off the edit info button if a patient is viewing this page.	
-      	//Button editInfo = (Button) findViewById(R.id.editInfoButton);      		
-      	//editInfo.setVisibility(View.GONE);
-    }
     
     UserInformation.userName = patientUserName;
     
@@ -65,7 +55,30 @@ public class MedChartActivity extends Activity {
 		
 		TextView bloodType = new TextView(this);
 		bloodType = (TextView) findViewById(R.id.textView5);
-		bloodType.setText("BloodType: " + patientInfo[9]);			
+		bloodType.setText("BloodType: " + patientInfo[9]);	
+		
+    TextView lastTetnus = new TextView(this);
+    lastTetnus = (TextView) findViewById(R.id.lastTetnus);
+    lastTetnus.setText("Last Tetnus: "+patientInfo[10]);
+    
+    TextView lastFlu = new TextView(this);
+    lastFlu = (TextView) findViewById(R.id.lastFlu);
+    lastFlu.setText("Last Flu Shot: "+patientInfo[11]);
+    
+    TextView hasHernia = new TextView(this);
+    hasHernia = (TextView) findViewById(R.id.hasHernia);
+    hasHernia.setText("Hernia"+patientInfo[12]);
+    
+    TextView hasBloodInUrine = new TextView(this);
+    hasBloodInUrine = (TextView) findViewById(R.id.hasBloodInUrine);
+    hasBloodInUrine.setText("Blood in Urine"+patientInfo[13]);
+    
+    TextView hasDiabetes = new TextView(this);
+    hasDiabetes = (TextView) findViewById(R.id.hasDiabetes);
+    hasDiabetes.setText("Diabetes"+patientInfo[14]);   
+
+		
+		
     } catch (Exception e) {  		
 	}    
     
