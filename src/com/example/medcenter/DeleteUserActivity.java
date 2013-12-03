@@ -5,7 +5,10 @@ import java.io.File;
 import android.os.Bundle;
 import android.os.Environment;
 import android.app.Activity;
+import android.content.Context;
 import android.view.Menu;
+import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -25,7 +28,7 @@ public class DeleteUserActivity extends Activity {
 	}
 	
 	
-	public void DeleteUser(){
+	public void DeleteUser(View view){
 		EditText editText = (EditText) findViewById(R.id.deleteThisPatient);
 	    String userName = editText.getText().toString();
 		//This is a test situation to be removed before demo. 
@@ -46,8 +49,13 @@ public class DeleteUserActivity extends Activity {
         else if(file.exists() == true)
         {
         	boolean deleted = file.delete();
-        	Toast.makeText(getApplicationContext(), "User has been deleted.",
+        	Toast.makeText(getApplicationContext(), "User "+userName+" has been deleted.",
     		          Toast.LENGTH_LONG).show();
+        	
+        	InputMethodManager inputManager = (InputMethodManager)            
+      			  this.getSystemService(Context.INPUT_METHOD_SERVICE); 
+      			    inputManager.hideSoftInputFromWindow(this.getCurrentFocus().getWindowToken(),      
+      			    InputMethodManager.HIDE_NOT_ALWAYS);
         }
 
 	}

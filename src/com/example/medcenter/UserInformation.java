@@ -20,6 +20,7 @@ public class UserInformation {
   static String hasDiabetes;
   static String isPregnant;
   static String[] prescriptions;
+  static String appointmentDate;
   
 
   public String getUserName() {

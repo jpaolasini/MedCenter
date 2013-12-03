@@ -57,6 +57,10 @@ public class MedChartActivity extends Activity {
     hasDiabetes = (TextView) findViewById(R.id.hasDiabetes);
     hasDiabetes.setText("Diabetes: "+patientInfo[14]);   
 
+    TextView nextAppointment = new TextView(this);
+    nextAppointment= (TextView) findViewById(R.id.nextAppointment);
+    nextAppointment.setText("Next Appointment: "+ UserInformation.appointmentDate);   
+
 		
     } catch (Exception e) {  		
 	}    
