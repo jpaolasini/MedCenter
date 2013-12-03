@@ -67,7 +67,7 @@ public class LoginActivity extends Activity {
     if((userName.equals("A")) && password.equals("A"))
     {//This is an admin login in order to demonstrate adding doctors/nurses.
     	Intent intent = new Intent(getApplicationContext(),
-			      AddDoctorActivity.class);
+			      AdminHomeActivity.class);
 			      startActivity(intent);
     }
     else if(!userName.equalsIgnoreCase("") && !password.equalsIgnoreCase(""))
